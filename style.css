@@ -1,0 +1,130 @@
+/*
+Theme Name:   Geotraces theme
+Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
+Description:  Geotraces, Labs by sedoo Child Theme
+Author:       Pierre Vert, sedoo
+Template:     sedoo-wpth-labs
+Version:      0.1.0
+License: Creative Commons, CC-by-nc-sa
+License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
+Text Domain: sedoo-wpthch-geotraces
+Domain Path: /languages
+Tags: 
+GitHub Theme URI: sedoo/sedoo-wpthch-geotraces
+GitHub Branch: master
+*/
+
+
+/** 
+OVERRIDE CSS 
+*/
+
+div[id="page"] {
+    padding: 60px 20px 20px;
+}
+
+.home header[id="cover"]::before, 
+.home header[id="cover"]::after {
+    display: none;
+}
+
+h1, .h1 {
+    font-size: 3rem;
+}
+
+p {
+    text-align: justify;
+}
+
+#content-area a {
+    color:#309fb3;
+}
+
+
+.wrapper, .wrapper-content, .archive .site-branding {
+    padding:20px;
+}
+
+.archives header#cover{
+    margin-bottom:20px;
+}
+
+.archive-description {
+    margin-bottom: 40px;
+}
+
+.post-wrapper {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.post-wrapper .post {
+    width: auto;
+    flex:1 0 330px;
+    padding: 20px;
+    -webkit-box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    background:#fff;
+    border-top: 4px solid #309fb3;
+}
+
+.post-wrapper .post:nth-child(4n) {
+    height: auto;
+    flex-flow: row wrap;
+}
+
+.post-wrapper .post:nth-child(4n)::before,
+.post-wrapper .post:nth-child(4n)::before {
+    display: none;
+}
+
+.post-wrapper .post:nth-child(4n) .entry-header {
+    width:auto;
+    height:auto;
+    margin-right: 0;
+}
+
+.post-wrapper .post:nth-child(4n) .group-content {
+    width: auto;
+    position: static;
+}
+
+.posts-navigation {
+    width:100%;
+}
+
+.posts-navigation .nav-links {
+    display: flex;
+}
+.posts-navigation .nav-links > * {
+    width: 50%;
+}
+
+.single-post main article section p:first-child::first-letter, .single-event main article section p:first-child::first-letter {
+	float:none;
+	font-size:1.5rem;
+	font-family:inherit;
+	padding:0
+}
+
+.content-table-display .post .entry-header {
+    display:block;
+    height:auto;
+}
+
+.content-table-display h2 {
+    font-family: "Poppins", sans-serif;
+    font-size:2rem;
+}
+
+.content-table-display .post .entry-content {
+    margin-bottom:0;
+}
+
+.content-table-display article {
+    border-bottom:1px solid #CCC;
+}
