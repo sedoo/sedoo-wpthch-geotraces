@@ -19,13 +19,14 @@
         // echo esc_html( $categories[0]->name );   
         // }; 
         ?>
-        <h2><?php the_title(); ?></h2>
+        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 	</header><!-- .entry-header -->
     <div class="group-content">
         <div class="entry-content">
             
-            <?php the_content(); ?>
-            <p class="date"><?php the_date('M / d / Y') ?></p>
+            <?php the_excerpt(); ?>
+            <p class="date"><?php the_date('M / d / Y') ?>
+            
         </div><!-- .entry-content -->
         <?php
 			edit_post_link(
