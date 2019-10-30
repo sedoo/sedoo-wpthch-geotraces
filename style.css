@@ -1,0 +1,253 @@
+/*
+Theme Name:   Geotraces theme
+Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
+Description:  Geotraces, Labs by sedoo Child Theme
+Author:       Pierre Vert, sedoo
+Template:     sedoo-wpth-labs
+Version:      0.1.0
+License: Creative Commons, CC-by-nc-sa
+License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
+Text Domain: sedoo-wpthch-geotraces
+Domain Path: /languages
+Tags: 
+GitHub Theme URI: sedoo/sedoo-wpthch-geotraces
+GitHub Branch: master
+*/
+
+
+/** 
+OVERRIDE CSS 
+*/
+
+:root {
+    --main-color:#309fb3;
+}
+
+div[id="page"] {
+    padding: 60px 20px 20px;
+}
+
+.home header[id="cover"]::before, 
+.home header[id="cover"]::after,
+.single-post main::before, 
+.single-post main::after, 
+.single-event main::before, 
+.single-event main::after {
+    display: none;
+}
+
+h1, .h1 {
+    font-size: 3rem;
+}
+
+h2, .h2 {
+    font-size: 2.5rem;
+}
+
+p {
+    text-align: justify;
+}
+
+figure {
+    max-width:100% !important;
+    margin:40px auto;
+}
+
+[class^="wrapper-"] figure img {
+    margin:0;
+}
+
+figcaption {     
+    font-size: 1.25rem; 
+    letter-spacing:1px;
+}
+
+table {
+    border:1px solid #ccc;
+    font-size:1.4rem;
+}
+
+table tr {
+    border-bottom:1px solid #ccc;
+    vertical-align: middle;
+}
+
+th {
+    text-align: center;
+}
+
+th, td {
+    padding:3px 3px;
+    border-right:1px solid #ccc
+}
+
+#content-area a,
+#content-area .posts-navigation a:hover {
+    color:var(--main-color);
+}
+
+#content-area .content-table-display a {
+    text-decoration: underline;
+}
+#content-area .content-table-display a:hover {
+    background:var(--main-color) !important;
+    color:#FFF;
+    text-decoration: none;
+}
+
+.wrapper, .wrapper-content, .archive .site-branding {
+    padding:20px;
+}
+
+.archives header#cover{
+    margin-bottom:20px;
+}
+
+.archive-description {
+    margin-bottom: 40px;
+}
+
+.post-wrapper {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.post-wrapper .post {
+    width: auto;
+    flex:1 0 330px;
+    padding: 20px;
+    -webkit-box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    background:#fff;
+    border-top: 4px solid var(--main-color);
+}
+
+.post:nth-child(8n) .entry-header p {
+    left: inherit;
+    right: inherit;
+}
+
+.post-wrapper .post:nth-child(4n),
+.content-table-display .post:nth-child(4n) {
+    height: auto;
+    flex-flow: row wrap;
+}
+
+.post-wrapper .post:nth-child(4n)::before,
+.content-table-display .post:nth-child(4n)::before {
+    display: none;
+}
+
+.post-wrapper .post:nth-child(4n) .entry-header,
+.content-table-display .post:nth-child(4n) .entry-header {
+    width:auto;
+    height:auto;
+    margin-right: 0;
+    margin-left:0;
+    margin-bottom:10px;
+}
+
+.post-wrapper .post:nth-child(4n) .group-content,
+.content-table-display .post:nth-child(4n) .group-content {
+    width: auto;
+    position: static;
+}
+
+.post:nth-child(8n) .entry-content {
+    text-align: left;
+}
+
+.posts-navigation {
+    width:100%;
+}
+
+.posts-navigation .nav-links {
+    display: flex;
+}
+.posts-navigation .nav-links > * {
+    width: 50%;
+}
+#content-area .posts-navigation a {
+    color:#FFF;
+}
+.single-post main article section p:first-child::first-letter, .single-event main article section p:first-child::first-letter {
+	float:none;
+	font-size:1.5rem;
+	font-family:inherit;
+	padding:0
+}
+
+.content-table-display .post:nth-child(4n) {
+    display:block;
+}
+
+.content-table-display .post .entry-header {
+    display:block;
+    height:auto;
+}
+
+.content-table-display h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size:2rem;
+    margin-top:10px;
+}
+
+.content-table-display .post .entry-content {
+    margin-bottom:0;
+}
+
+.content-table-display article:first-child {
+    border-top:1px solid #CCC;
+}
+
+.content-table-display article {
+    border-bottom:1px solid #CCC;
+    box-shadow:none;
+}
+
+.content-table-display .date {
+    font-weight: bold;
+}
+
+/****************   SINGLE   ***************/
+
+.single-post main, .single-event main {
+    width:auto;
+    max-width: 900px;
+    flex:1 1 700px;
+    margin-bottom:0;
+}
+
+.single main + aside {
+    flex:1 0 320px;
+    padding:100px 0 30px 20px;
+}
+
+.single-post main > article > header div > p {
+    margin:0;
+}
+
+.single main + aside > section {
+    margin-bottom:30px;
+}
+
+.single main + aside h2 {
+    font-family: "Montserrat", sans-serif;
+}
+
+a.tag-cloud-link {
+    display: inline-block;
+    margin-bottom: 3px;
+    padding: 2px 5px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.single-post main article, .single-event main article {
+    padding:50px;
+}
