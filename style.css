@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.1.0
+Version:      0.2.0
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -81,15 +81,19 @@ th, td {
     border-right:1px solid #ccc
 }
 
+#content {
+    overflow: hidden;
+}
+
 #content-area a,
 #content-area .posts-navigation a:hover {
     color:var(--main-color);
 }
 
-#content-area .content-table-display a {
+#content-area .content-list a {
     text-decoration: underline;
 }
-#content-area .content-table-display a:hover {
+#content-area .content-list a:hover {
     background:var(--main-color) !important;
     color:#FFF;
     text-decoration: none;
@@ -99,6 +103,36 @@ th, td {
     padding:20px;
 }
 
+.wrapper-layout h2 a:hover,
+.wrapper-layout h3 a:hover {
+    color:#000;
+}
+
+header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding .site-branding, .archive header[id="masthead"] .site-branding .site-branding {
+    max-width: 230px;
+}
+
+/*** HOMEPAGE **/
+
+.home #primary {
+    display:flex;
+    flex-flow: row wrap;
+    padding:70px 0;
+}
+
+.home #primary > main {
+    flex:1 1 800px;
+    padding:0 20px 0;
+}
+.home #primary > aside {
+    flex:1 1 300px;
+}
+
+.home h2 {
+    font-size:3.5rem;
+}
+
+/** ARCHIVE ***/
 .archives header#cover{
     margin-bottom:20px;
 }
@@ -132,18 +166,18 @@ th, td {
 }
 
 .post-wrapper .post:nth-child(4n),
-.content-table-display .post:nth-child(4n) {
+.content-list .post:nth-child(4n) {
     height: auto;
     flex-flow: row wrap;
 }
 
 .post-wrapper .post:nth-child(4n)::before,
-.content-table-display .post:nth-child(4n)::before {
+.content-list .post:nth-child(4n)::before {
     display: none;
 }
 
 .post-wrapper .post:nth-child(4n) .entry-header,
-.content-table-display .post:nth-child(4n) .entry-header {
+.content-list .post:nth-child(4n) .entry-header {
     width:auto;
     height:auto;
     margin-right: 0;
@@ -152,7 +186,7 @@ th, td {
 }
 
 .post-wrapper .post:nth-child(4n) .group-content,
-.content-table-display .post:nth-child(4n) .group-content {
+.content-list .post:nth-child(4n) .group-content {
     width: auto;
     position: static;
 }
@@ -181,35 +215,35 @@ th, td {
 	padding:0
 }
 
-.content-table-display .post:nth-child(4n) {
+.content-list .post:nth-child(4n) {
     display:block;
 }
 
-.content-table-display .post .entry-header {
+.content-list .post .entry-header {
     display:block;
     height:auto;
 }
 
-.content-table-display h2 {
+.content-list h2 {
     font-family: "Montserrat", sans-serif;
     font-size:2rem;
     margin-top:10px;
 }
 
-.content-table-display .post .entry-content {
+.content-list .post .entry-content {
     margin-bottom:0;
 }
 
-.content-table-display article:first-child {
+.content-list article:first-child {
     border-top:1px solid #CCC;
 }
 
-.content-table-display article {
+.content-list article {
     border-bottom:1px solid #CCC;
     box-shadow:none;
 }
 
-.content-table-display .date {
+.content-list .date {
     font-weight: bold;
 }
 
