@@ -39,9 +39,40 @@ get_header();
     <?php if ( is_active_sidebar( 'home_right_1' ) ) : ?>
     <aside id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
         <?php dynamic_sidebar( 'home_right_1' ); ?>
+
+        <div class="social-partenaires">
+            <?php if( have_rows('reseaux_sociaux', 'option') ): ?>
+            <div class="social-list">
+                <h2><?php echo __('Follow us', 'sedoo-wpth-labs'); ?></h2>
+                <ul class="inline-list">
+
+                <?php while( have_rows('reseaux_sociaux', 'option') ): the_row(); 
+
+                    // vars
+                    $link = get_sub_field('lien_reseau_social', 'option');
+                    ?>
+
+                    <li class="list">
+
+                        <?php if( $link ): ?>
+                            <a href="<?php echo $link; ?>">
+                            </a>
+                        <?php endif; ?>
+
+                    </li>
+
+                <?php endwhile; ?>
+
+                </ul>
+            </div>
+            <?php endif; ?>
+        </div>
+        <section id="login-button">
+            <a href="<?php echo wp_login_url(); ?>" title="Login">Login</a>
+        </section>
     </div><!-- #primary-sidebar -->
     <?php endif; ?>
-    
+
 </div><!-- #primary -->
 
 <?php

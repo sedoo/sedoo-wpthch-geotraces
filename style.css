@@ -81,6 +81,10 @@ th, td {
     border-right:1px solid #ccc
 }
 
+blockquote {
+    font-size: 3.1rem;
+}
+
 #content {
     overflow: hidden;
 }
@@ -122,7 +126,7 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
 
 .home #primary > main {
     flex:1 1 800px;
-    padding:0 20px 0;
+    padding:0 40px 0;
 }
 .home #primary > aside {
     flex:1 1 300px;
