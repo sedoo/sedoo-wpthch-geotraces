@@ -18,7 +18,7 @@ get_header();
 			get_template_part( 'template-parts/header-category', '' );
 			?>
             
-            <section role="listNews" class="content-table-display">
+            <section role="listNews" class="content-list">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :

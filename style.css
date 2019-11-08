@@ -116,6 +116,31 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
     max-width: 230px;
 }
 
+/*** ALIGNEMENT **/
+.alignleft {
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wrapper-layout a.nohover:hover {
+    background:transparent;
+}
+.wrapper-layout a.nohover:hover img {
+    box-shadow: 1px 1px 3px var(--main-color);
+}
+
 /*** HOMEPAGE **/
 
 .home #primary {
@@ -277,7 +302,8 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
     font-family: "Montserrat", sans-serif;
 }
 
-a.tag-cloud-link {
+a.tag-cloud-link,
+span.tag-cloud-link {
     display: inline-block;
     margin-bottom: 3px;
     padding: 2px 5px;
@@ -286,6 +312,33 @@ a.tag-cloud-link {
     text-decoration: none;
 }
 
+span.tag-cloud-link {
+    color: var(--main-color);
+}
+
 .single-post main article, .single-event main article {
     padding:50px;
 }
+
+/************ EVENTS *************/
+.tribe-events-loop .author.location {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: "Montserrat", sans-serif;
+}
+.tribe-events-loop .author.location .tribe-events-venue-details {
+    width: 100%;
+}
+
+.tribe-events-single .event-categories.custom {
+    margin-bottom:20px;
+}
+
+[class*="tribe-events-category-geotraces"] span.tag-cloud-link,
+span.tag-cloud-link[class*="geotraces"] {
+    background: var(--main-color);
+    color:#FFF;
+}
+
+
