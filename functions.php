@@ -76,5 +76,34 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit)
     }
 }
 
+/****
+ * DEFAULT IMAGE ATTACHMENT SETTINGS
+ */
+
+add_action( 'after_setup_theme', 'sedoo_wpthch_geotraces_default_image_settings' );
+
+function sedoo_wpthch_geotraces_default_image_settings() {
+    update_option( 'image_default_align', 'center' );
+    update_option( 'image_default_link_type', 'none' );
+    update_option( 'image_default_size', 'medium' );
+}
+
+/**
+ * TAG CLOUD LIMIT HOOK
+ */
+
+//Register tag cloud filter callback
+add_filter('widget_tag_cloud_args', 'sedoo_wpthch_geotraces_tag_widget_limit');
+ 
+//Limit number of tags inside widget
+function sedoo_wpthch_geotraces_tag_widget_limit($args){
+ 
+ //Check if taxonomy option inside widget is set to tags
+ if(isset($args['taxonomy']) && $args['taxonomy'] == 'post_tag'){
+  $args['number'] = 0; //Limit number of tags
+ }
+ 
+ return $args;
+}
 
 ?>
