@@ -109,6 +109,6 @@ function sedoo_wpthch_geotraces_tag_widget_limit($args){
 /**
  * Include ACF Fields
  */
-require get_template_directory() . '/inc/geotraces-acf-config.php';
+require 'inc/geotraces-acf-config.php';
 
 ?>
