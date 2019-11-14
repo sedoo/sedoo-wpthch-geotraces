@@ -12,37 +12,22 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <a href="<?php the_permalink(); ?>"></a>
+    <?php
+    if (!is_front_page()) {
+    ?>
 	<header class="entry-header">
-        <figure>
-            <?php 
-            if (has_post_thumbnail()) {
-                the_post_thumbnail('thumbnail-loop');
-            } else {
-                if (catch_that_image() ==  "no_image" ){
-                    $logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'thumbnail-loop', false);
-                    echo '<img src="'.$logo[0].'" alt="" class="custom-logo">';
-                } else {
-                    echo '<img src="';
-                    echo catch_that_image();
-                    echo '" alt="" />'; 
-                }
-                
-            }?>
-            
-        </figure>
-        <?php
-        if (!is_front_page()) {
-        ?>
         <p>
-        <?php     $categories = get_the_category();
+        <?php     
+            $categories = get_the_category();
             if ( ! empty( $categories ) ) {
             echo esc_html( $categories[0]->name );   
-        }; ?>
-        </p>
-        <?php
-        }
+        }; 
         ?>
-	</header><!-- .entry-header -->
+        </p>
+    </header><!-- .entry-header -->
+    <?php    
+    }
+    ?>
     <div class="group-content">
         <div class="entry-content">
             <h2><?php the_title(); ?></h2>
