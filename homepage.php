@@ -28,7 +28,7 @@ get_header();
 
         <?php
         // SHOW NEWS LIST
-        sedoo_wpthch_geotraces_postlist_by_term('News', 'news', 'list', '4');
+        sedoo_wpthch_geotraces_postlist_by_term('News', 'news', 'grid-noimage', '4');
         ?>
         <?php
         // SHOW HIGHLIGHTS LIST
@@ -67,9 +67,6 @@ get_header();
             </div>
             <?php endif; ?>
         </div>
-        <section id="login-button">
-            <a href="<?php echo wp_login_url(); ?>" title="Login">Login</a>
-        </section>
     </div><!-- #primary-sidebar -->
     <?php endif; ?>
 

@@ -348,4 +348,33 @@ span.tag-cloud-link[class*="geotraces"] {
     color:#FFF;
 }
 
+/*****  SOCIAL LINK  ****/
 
+#shortcuts li.social-link:hover {
+    transform: none;
+}
+
+#shortcuts .social-link a {
+    display: block;
+    height: 30px;
+    filter: invert(100%);
+}
+#shortcuts .social-link a:hover {
+    filter: none;
+}
+
+#shortcuts .social-link a[href*="twitter"] {
+    background: url("image/logo_twitter.svg") no-repeat;
+}
+
+#shortcuts .social-link a[href*="facebook"] {
+    background: url("image/logo_facebook.svg") no-repeat;
+}
+#shortcuts .social-link a[href*="youtube"] {
+    background: url("image/logo_youtube.svg") no-repeat;
+}
+
+/*** INTRANET FOOTER LINK ***/
+footer .intranet li {
+    font-size: 1.3rem;
+}
