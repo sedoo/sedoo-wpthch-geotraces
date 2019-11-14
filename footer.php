@@ -137,7 +137,7 @@ $options_list_footer = get_field('list_choice', 'option');
             <div class="social-partenaires">
                  <?php if( have_rows('reseaux_sociaux', 'option') ): ?>
                     <div class="social-list">
-                        <h2><?php echo __('Suivez-nous sur les réseaux sociaux', 'sedoo-wpth-labs'); ?></h2>
+                        <h2><?php echo __('Follow us', 'sedoo-wpth-labs'); ?></h2>
                         <ul class="inline-list">
 
                         <?php while( have_rows('reseaux_sociaux', 'option') ): the_row(); 
@@ -206,8 +206,8 @@ $options_list_footer = get_field('list_choice', 'option');
                 <ul class="intranet">
                     <?php if(get_field('lien_intranet', 'option')){ ?>
                     <li>
-                        <a href="<?php the_field('lien_intranet', 'option'); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() . '/image/key.svg'; ?>" alt="" /><?php echo __("Intranet", 'sedoo-wpth-labs'); ?>
+                        <a href="<?php echo wp_login_url(); ?>" target="_blank">
+                            <img src="<?php echo get_template_directory_uri() . '/image/key.svg'; ?>" width="60px" alt="" /><?php echo __("Login", 'sedoo-wpth-labs'); ?>
                         </a>
                     </li>
                     <?php } ?>

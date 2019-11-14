@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.4.2
+Version:      0.5.0
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -24,7 +24,7 @@ OVERRIDE CSS
 }
 
 div[id="page"] {
-    padding: 60px 20px 20px;
+    padding: 110px 20px 20px;
 }
 
 .home header[id="cover"]::before, 
@@ -132,6 +132,13 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.wrapper-content img.alignright{
+	margin-left:1.5em;
+}
+.wrapper-content img.alignleft{
+	margin-right:1.5em;
 }
 
 .wrapper-layout a.nohover:hover {
@@ -276,6 +283,10 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
     font-weight: bold;
 }
 
+.post .group-content .entry-content {
+    margin-bottom: 50px;
+}
+
 /****************   SINGLE   ***************/
 
 .single-post main, .single-event main {
@@ -341,4 +352,64 @@ span.tag-cloud-link[class*="geotraces"] {
     color:#FFF;
 }
 
+ol.tribe-list-widget,
+.tribe-events-widget-link  {
+    padding-left: 40px;
+}
 
+ol.tribe-list-widget li {
+    list-style-type: disc;
+    margin-bottom:20px;
+}
+
+ol.tribe-list-widget h4 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom:0;
+}
+
+/*****  SOCIAL LINK  ****/
+
+#shortcuts li.social-link:hover {
+    transform: none;
+}
+
+#shortcuts .social-link a {
+    display: block;
+    height: 30px;
+    filter: invert(100%);
+}
+#shortcuts .social-link a:hover {
+    filter: none;
+}
+
+#shortcuts .social-link a[href*="twitter"] {
+    background: url("image/logo_twitter.svg") no-repeat;
+}
+
+#shortcuts .social-link a[href*="facebook"] {
+    background: url("image/logo_facebook.svg") no-repeat;
+}
+#shortcuts .social-link a[href*="youtube"] {
+    background: url("image/logo_youtube.svg") no-repeat;
+}
+
+/*** INTRANET FOOTER LINK ***/
+
+.copyright .wrapper.site-info {
+    padding:0 0 20px;
+}
+
+footer .intranet li a{
+    display: block;
+    font-size: 1.8rem;
+    padding:3px 10px;
+}
+
+footer .intranet li a:hover img {
+    filter: invert(100%);
+}
+
+.copyright .wrapper.site-info .intranet {
+    margin-top:0;
+}
