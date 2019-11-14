@@ -207,7 +207,7 @@ $options_list_footer = get_field('list_choice', 'option');
                     <?php if(get_field('lien_intranet', 'option')){ ?>
                     <li>
                         <a href="<?php echo wp_login_url(); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() . '/image/key.svg'; ?>" alt="" /><?php echo __("Login", 'sedoo-wpth-labs'); ?>
+                            <img src="<?php echo get_template_directory_uri() . '/image/key.svg'; ?>" width="60px" alt="" /><?php echo __("Login", 'sedoo-wpth-labs'); ?>
                         </a>
                     </li>
                     <?php } ?>

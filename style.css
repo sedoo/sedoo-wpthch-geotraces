@@ -283,6 +283,10 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
     font-weight: bold;
 }
 
+.post .group-content .entry-content {
+    margin-bottom: 50px;
+}
+
 /****************   SINGLE   ***************/
 
 .single-post main, .single-event main {
@@ -348,6 +352,22 @@ span.tag-cloud-link[class*="geotraces"] {
     color:#FFF;
 }
 
+ol.tribe-list-widget,
+.tribe-events-widget-link  {
+    padding-left: 40px;
+}
+
+ol.tribe-list-widget li {
+    list-style-type: disc;
+    margin-bottom:20px;
+}
+
+ol.tribe-list-widget h4 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom:0;
+}
+
 /*****  SOCIAL LINK  ****/
 
 #shortcuts li.social-link:hover {
@@ -375,6 +395,21 @@ span.tag-cloud-link[class*="geotraces"] {
 }
 
 /*** INTRANET FOOTER LINK ***/
-footer .intranet li {
-    font-size: 1.3rem;
+
+.copyright .wrapper.site-info {
+    padding:0 0 20px;
+}
+
+footer .intranet li a{
+    display: block;
+    font-size: 1.8rem;
+    padding:3px 10px;
+}
+
+footer .intranet li a:hover img {
+    filter: invert(100%);
+}
+
+.copyright .wrapper.site-info .intranet {
+    margin-top:0;
 }

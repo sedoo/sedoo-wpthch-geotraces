@@ -44,12 +44,19 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit)
     );
     $url= get_term_link($term, 'category');
 
-    if ( $layout == "grid") {
-        $listingClass = "post-wrapper";
-    } else {
-        $listingClass = "content-list";
-    }
+    switch ($layout) {
+        case "grid" :
+            $listingClass = "post-wrapper";
+            break;
 
+        case "grid-noimage" :
+            $listingClass = "post-wrapper noimage";
+            break;
+
+        default:
+            $listingClass = "content-list";
+    }    
+        
     $postsList = get_posts ($argsListPost);
     if ($postsList){       
     ?>
