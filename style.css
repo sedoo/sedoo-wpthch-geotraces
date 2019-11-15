@@ -413,3 +413,28 @@ footer .intranet li a:hover img {
 .copyright .wrapper.site-info .intranet {
     margin-top:0;
 }
+
+/*** BLOCK SSC MEMBERS ***/
+
+[data-role="listSscMembers"] > article > header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1.3rem;
+}
+[data-role="listSscMembers"] > article > header > div:last-of-type{
+    width: 100%;
+}
+
+[data-role="listSscMembers"] input[type="checkbox"] {
+    display: none;
+}
+
+[data-role="listSscMembers"] input[type="checkbox"] + div {
+    display: none;
+}
+[data-role="listSscMembers"] input[type="checkbox"]:checked + div {
+    display: block;
+}
+
+
