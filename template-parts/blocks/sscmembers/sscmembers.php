@@ -72,7 +72,7 @@ foreach ( $sscUsers as $user ) {
             <div><?php echo $user_meta_geotraces_user_last_name;?> <?php echo $user_meta_geotraces_user_first_name;?></div>
             <div><?php echo $user_meta_geotraces_user_position;?></div>
             <div><?php echo $user_meta_geotraces_user_country;?></div>
-            <label for="deploy<?php echo $i;?>">+</label>
+            <label for="deploy<?php echo $i;?>"><span>+</span></label>
         </header>
         <input type="checkbox" name="radioDeploy<?php echo $i;?>" id="deploy<?php echo $i;?>">
         <div>
