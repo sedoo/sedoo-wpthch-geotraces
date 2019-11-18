@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.5.0
+Version:      0.6.0
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -393,6 +393,12 @@ ol.tribe-list-widget h4 {
 #shortcuts .social-link a[href*="youtube"] {
     background: url("image/logo_youtube.svg") no-repeat;
 }
+#shortcuts .social-link a[href*="linkedin"] {
+    background: url("image/logo_linkedin.svg") no-repeat;
+}
+#shortcuts .social-link a[href*="instagram"] {
+    background: url("image/logo_instagram.svg") no-repeat;
+}
 
 /*** INTRANET FOOTER LINK ***/
 
@@ -413,3 +419,49 @@ footer .intranet li a:hover img {
 .copyright .wrapper.site-info .intranet {
     margin-top:0;
 }
+
+/*** BLOCK SSC MEMBERS ***/
+
+[data-role="listSscMembers"] > article {
+    padding: 15px;
+    border-bottom: 1px solid #CCC;
+    font-family: arial;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+}
+
+[data-role="listSscMembers"] > article > header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+[data-role="listSscMembers"] > article > header > div:last-of-type{
+    /* width: 100%; */
+}
+
+[data-role="listSscMembers"] > article > header > label {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    background: var(--main-color);
+    color:#FFF;
+    font-size: 2.3rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+[data-role="listSscMembers"] input[type="checkbox"] {
+    display: none;
+}
+
+[data-role="listSscMembers"] input[type="checkbox"] + div {
+    display: none;
+}
+[data-role="listSscMembers"] input[type="checkbox"]:checked + div {
+    display: block;
+}
+
+
