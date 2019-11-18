@@ -20,11 +20,11 @@ function sedoo_wpthch_geotraces_widgets_init() {
 add_action( 'widgets_init', 'sedoo_wpthch_geotraces_widgets_init' );
 
 
-function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit) {
+function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit, $offset) {
     global $post;
     $argsListPost = array(
         'posts_per_page'   => $limit,
-        'offset'           => 0,
+        'offset'           => $offset,
         "tax_query" => array(
             array(
                 "taxonomy" => "category",
@@ -42,7 +42,6 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit)
         'post_status'      => 'publish',
         'suppress_filters' => true 
     );
-    $url= get_term_link($term, 'category');
 
     switch ($layout) {
         case "grid" :
@@ -56,8 +55,10 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit)
         default:
             $listingClass = "content-list";
     }    
-        
+
+    $url= get_term_link($term, 'category');
     $postsList = get_posts ($argsListPost);
+    
     if ($postsList){       
     ?>
     <h2><?php echo __($title, 'sedoo-wpth-labs') ?></h2>
@@ -117,5 +118,5 @@ function sedoo_wpthch_geotraces_tag_widget_limit($args){
  * Include ACF Fields
  */
 require 'inc/geotraces-acf-config.php';
-
+require 'inc/geotraces-acf-block.php';
 ?>
