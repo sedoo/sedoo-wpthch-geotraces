@@ -393,6 +393,12 @@ ol.tribe-list-widget h4 {
 #shortcuts .social-link a[href*="youtube"] {
     background: url("image/logo_youtube.svg") no-repeat;
 }
+#shortcuts .social-link a[href*="linkedin"] {
+    background: url("image/logo_linkedin.svg") no-repeat;
+}
+#shortcuts .social-link a[href*="instagram"] {
+    background: url("image/logo_instagram.svg") no-repeat;
+}
 
 /*** INTRANET FOOTER LINK ***/
 

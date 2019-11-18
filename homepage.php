@@ -26,14 +26,6 @@ get_header();
         </div>
         <?php endwhile; endif; ?>
 
-        <?php
-        // SHOW NEWS LIST
-        sedoo_wpthch_geotraces_postlist_by_term('News', 'news', 'grid-noimage', '4');
-        ?>
-        <?php
-        // SHOW HIGHLIGHTS LIST
-        sedoo_wpthch_geotraces_postlist_by_term('Science highlights', 'newsflash', 'grid', '4');
-        ?>
     </main><!-- #main -->
 
     <?php if ( is_active_sidebar( 'home_right_1' ) ) : ?>
