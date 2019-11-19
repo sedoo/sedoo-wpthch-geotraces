@@ -22,16 +22,10 @@ add_action( 'widgets_init', 'sedoo_wpthch_geotraces_widgets_init' );
 
 function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit, $offset) {
     global $post;
+    
     $argsListPost = array(
         'posts_per_page'   => $limit,
         'offset'           => $offset,
-        "tax_query" => array(
-            array(
-                "taxonomy" => "category",
-                "field"    => "slug",
-                "terms"    => $term,
-            )
-        ),
         'orderby'          => 'date',
         'order'            => 'DESC',
         'include'          => '',
@@ -42,6 +36,19 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit,
         'post_status'      => 'publish',
         'suppress_filters' => true 
     );
+
+    if ($term !== "all") {
+        $argsListPost['tax_query'] = array(
+                        array(
+                            "taxonomy" => "category",
+                            "field"    => "slug",
+                            "terms"    => $term,
+                        )
+                        );
+        $url = get_term_link($term, 'category');
+        } else {
+        $url = get_category_link($term, 'category');
+        }
 
     switch ($layout) {
         case "grid" :
@@ -56,7 +63,7 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit,
             $listingClass = "content-list";
     }    
 
-    $url= get_term_link($term, 'category');
+    // $url= get_term_link($term, 'category');
     $postsList = get_posts ($argsListPost);
     
     if ($postsList){       
