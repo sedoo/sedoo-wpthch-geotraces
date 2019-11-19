@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.6.2
+Version:      0.6.3
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -197,7 +197,7 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
 }
 
 .post:nth-child(8n) .entry-header p {
-    left: inherit;
+    left: 10px;
     right: inherit;
 }
 
@@ -214,20 +214,24 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
 
 .post-wrapper .post:nth-child(4n) .entry-header,
 .content-list .post:nth-child(4n) .entry-header {
-    width:auto;
-    height:auto;
+    width:100%;
+    height: 235px;
     margin-right: 0;
     margin-left:0;
     margin-bottom:10px;
 }
 
+.post-wrapper .post:nth-child(4n) .entry-header,
 .post-wrapper .post:nth-child(4n) .group-content,
-.content-list .post:nth-child(4n) .group-content {
-    width: auto;
+.post-wrapper .post:nth-child(8n) .group-content,
+.content-list .post:nth-child(4n) .group-content,
+.content-list .post:nth-child(8n) .group-content {
+    width: 100%;
     position: static;
 }
 
-.post:nth-child(8n) .entry-content {
+.post:nth-child(8n) .entry-content > h2,
+.post:nth-child(8n) .entry-content > p{
     text-align: left;
 }
 
@@ -259,7 +263,9 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
     display:block;
     height:auto;
 }
-
+.post-wrapper .post .entry-header > figure {
+    margin:0;
+}
 .content-list h2 {
     font-family: "Montserrat", sans-serif;
     font-size:2rem;
@@ -444,9 +450,9 @@ footer .intranet li a:hover img {
     flex-wrap: wrap;
 
 }
-[data-role="listSscMembers"] > article > header > div:last-of-type{
-    /* width: 100%; */
-}
+/* [data-role="listSscMembers"] > article > header > div:last-of-type{
+    width: 100%;
+} */
 
 [data-role="listSscMembers"] > article > label {
     position: absolute;

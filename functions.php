@@ -47,7 +47,7 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit,
                         );
         $url = get_term_link($term, 'category');
         } else {
-        $url = get_category_link($term, 'category');
+        $url = get_permalink( get_option( 'page_for_posts' ) );
         }
 
     switch ($layout) {
@@ -63,7 +63,6 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit,
             $listingClass = "content-list";
     }    
 
-    // $url= get_term_link($term, 'category');
     $postsList = get_posts ($argsListPost);
     
     if ($postsList){       
