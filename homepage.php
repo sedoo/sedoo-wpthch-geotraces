@@ -19,6 +19,11 @@ get_header();
             </div>
         </header>
 <div id="primary" class="content-area wrapper-layout home-content">
+    <?php if ( is_active_sidebar( 'home_top_area' ) ) : ?>
+    <nav id="home_top_area" class="widget-area" role="complementary">
+        <?php dynamic_sidebar( 'home_top_area' ); ?>
+    </nav><!-- #primary-sidebar -->
+    <?php endif; ?>
     <main id="main" class="site-main">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
@@ -31,9 +36,7 @@ get_header();
     <?php if ( is_active_sidebar( 'home_right_1' ) ) : ?>
     <aside id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
         <?php dynamic_sidebar( 'home_right_1' ); ?>
-
-
-    </div><!-- #primary-sidebar -->
+    </aside><!-- #primary-sidebar -->
     <?php endif; ?>
 
 </div><!-- #primary -->

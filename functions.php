@@ -7,6 +7,15 @@ function theme_enqueue_styles() {
 
 function sedoo_wpthch_geotraces_widgets_init() {
 
+    register_sidebar( array(
+		'name'          => 'Home top area',
+		'id'            => 'home_top_area',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+    ) );
+
 	register_sidebar( array(
 		'name'          => 'Home right sidebar',
 		'id'            => 'home_right_1',
@@ -14,13 +23,22 @@ function sedoo_wpthch_geotraces_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
-	) );
+    ) );
+
+    register_sidebar(array(
+		'name'          => 'Tag cloud side bar',
+		'id'            => 'tag_cloud_sidebar',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+    ) );
 
 }
 add_action( 'widgets_init', 'sedoo_wpthch_geotraces_widgets_init' );
 
 
-function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit, $offset) {
+function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit, $offset, $button) {
     global $post;
     
     $argsListPost = array(
@@ -82,7 +100,11 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit,
         endforeach;
         ?>	
     </section>
+    <?php if ($button == 1) { ?>    
     <a href="<?php echo $url; ?>" class="btn"><?php echo __('See all '.$title.'', 'sedoo-wpth-labs'); ?></a>
+    <?php
+        }
+    ?>
     
     <?php 
     the_posts_navigation();
@@ -119,6 +141,36 @@ function sedoo_wpthch_geotraces_tag_widget_limit($args){
  
  return $args;
 }
+
+/******************************************************************
+ * Afficher les archives des custom taxonomies
+ * $categories = get_the_terms( $post->ID, 'category');  
+ */
+
+function sedoo_wpthch_geotraces_show_categories($categories, $slugRewrite) {
+ 
+    if( $categories ) {
+    ?>
+    <div class="tag">
+    <?php
+        foreach( $categories as $categorie ) { 
+            if ($categorie->slug !== "non-classe") {
+                // if ( "en" == pll_current_language()) {
+                //     echo '<a href="'.site_url().'/'.pll_current_language().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+                // } else {
+                    echo '<a href="'.site_url().'/'.$slugRewrite.'/'.$categorie->slug.'" class="'.$categorie->slug.'">';
+                // }
+                echo $categorie->name; 
+                ?>                    
+            </a>
+    <?php 
+            }
+        }
+    ?>
+    </div>
+  <?php
+      } 
+  }
 
 /**
  * Include ACF Fields
