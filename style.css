@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.6.3
+Version:      0.6.4
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -148,24 +148,53 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
     box-shadow: 1px 1px 3px var(--main-color);
 }
 
+/*** TOP HEADER NAV **/
+
+header[id="masthead"] .wrapper .nav-container {
+    flex-wrap: wrap;
+}
+
+[id="ul-top-header"] {
+    display: flex;
+    font-family: arial, sans-serif;
+    font-size:1.5rem;
+}
+[id="ul-top-header"] li {
+    margin-right:20px;
+}
+@media (max-width:1024px) {
+    #top-header {
+        display: none;
+    }
+}
+
+
 /*** HOMEPAGE **/
 
-.home #primary {
+.home #primary,
+#content-area.newsflash > .wrapper-layout-newsflash {
     display:flex;
     flex-flow: row wrap;
     padding:70px 0;
 }
 
-.home #primary > main {
+.home #primary > main,
+#content-area.newsflash > .wrapper-layout-newsflash > main {
     flex:1 1 800px;
     padding:0 40px 0;
 }
-.home #primary > aside {
+.home #primary > aside,
+#content-area.newsflash > .wrapper-layout-newsflash > aside {
     flex:1 1 300px;
 }
 
 .home h2 {
     font-size:3.5rem;
+}
+
+#content-area.newsflash > .wrapper-layout-newsflash a.tag-cloud-link:hover {
+    color:#FFF;
+    background: var(--main-color);
 }
 
 /** ARCHIVE ***/
@@ -315,7 +344,8 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
     margin-bottom:30px;
 }
 
-.single main + aside h2 {
+.single main + aside h2,
+.category-newsflash main + aside h2{
     font-family: "Montserrat", sans-serif;
 }
 
@@ -476,14 +506,23 @@ footer .intranet li a:hover img {
     border: 1px solid  var(--main-color);
 }
 
+[data-role="listSscMembers"] > article > label > span::before {
+    content: "+";
+}
+
+
+[data-role="listSscMembers"] input[type="radio"]:checked + label > span::before {
+    content: "-";
+}
+
 [data-role="listSscMembers"] input[type="radio"] {
     display: none;
 }
 
-[data-role="listSscMembers"] input[type="radio"] + div {
+[data-role="listSscMembers"] input[type="radio"] ~ div {
     display: none;
 }
-[data-role="listSscMembers"] input[type="radio"]:checked + div {
+[data-role="listSscMembers"] input[type="radio"]:checked ~ div {
     display: block;
 }
 

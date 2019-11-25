@@ -52,7 +52,7 @@ $args = array(
 
 <section data-role="listSscMembers">
 <?php
-$i=1;
+$i=rand();
 $firstletter="";
 $count=count($sscUsers);
 foreach ( $sscUsers as $user ) {
@@ -65,32 +65,33 @@ foreach ( $sscUsers as $user ) {
     $user_meta_geotraces_user_country = get_user_meta($user_id, 'geotraces_user_country', true);
     $user_meta_geotraces_user_phone = get_user_meta($user_id, 'geotraces_user_phone', true);
 
-    $user_meta_geotraces_user_last_name_firstLetter = substr($user_meta_geotraces_user_last_name, 0, 1);
+    $user_meta_geotraces_user_last_name_firstLetter = strtoupper(substr($user_meta_geotraces_user_last_name, 0, 1));
 
     ?>
  
     <article class="fl-<?php echo $user_meta_geotraces_user_last_name_firstLetter;?>">
     <?php 
-    if ($count>4) {
+    // if ($count>4) {
         if (($firstletter == "") || (($firstletter !== "") && ( $firstletter!==$user_meta_geotraces_user_last_name_firstLetter) ) ){
             $firstletter= $user_meta_geotraces_user_last_name_firstLetter;
             echo "<div class=\"firstletterList\">".$firstletter."</div>";
         } else {
             $firstletter= $user_meta_geotraces_user_last_name_firstLetter;
         }
-    }
+    // }
     ?>
-        <label for="deploy<?php echo $i;?>"><span>+</span></label>
+        <input type="radio" name="radioDeploy[]" id="deploy<?php echo $i;?>">
+        <label for="deploy<?php echo $i;?>"><span></span></label>
         <header>
             <div><?php echo $user_meta_geotraces_user_last_name;?> <?php echo $user_meta_geotraces_user_first_name;?></div>
             <div><?php echo $user_meta_geotraces_user_position;?></div>
             <div><?php echo $user_meta_geotraces_user_country;?></div>
         </header>
-        <input type="radio" name="radioDeploy[]" id="deploy<?php echo $i;?>">
+        
         <div>
             <p><?php echo esc_html( $user->user_email );?></p>
             <address><?php echo $user_meta_geotraces_user_address;?></address>
-            <p><?php echo $user_meta_geotraces_user_phone;?></p>
+            <p>Tel:<?php echo $user_meta_geotraces_user_phone;?></p>
         </div>
     </article>
 <?php

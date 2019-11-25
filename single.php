@@ -21,8 +21,11 @@ if (is_array($categories) || is_object($categories))
 
 while ( have_posts() ) : the_post();
 
-$themes = get_the_terms( $post->ID, 'sedoo-theme-labo');  
-$themeSlugRewrite = "sedoo-theme-labo";
+$themes = get_the_terms( $post->ID, 'category');  
+$themeSlugRewrite = "category";
+// foreach ($terms as $term) {
+// echo $term;
+// }
 ?>
 	<div id="primary" class="content-area <?php echo esc_html( $categories[0]->slug );?>">
         <?php
@@ -41,8 +44,8 @@ $themeSlugRewrite = "sedoo-theme-labo";
                         <h1><?php the_title(); ?></h1>
                         <div>
                             <?php 
-                            if( function_exists('sedoo_labtools_show_categories') ){
-                            sedoo_labtools_show_categories($themes, $themeSlugRewrite);
+                            if( function_exists('sedoo_wpthch_geotraces_show_categories') ){
+                            sedoo_wpthch_geotraces_show_categories($themes, $themeSlugRewrite);
                             }
                             ?>
                             <p class="post-meta"><?php the_date(); ?></p>
@@ -59,10 +62,16 @@ $themeSlugRewrite = "sedoo-theme-labo";
                     <?php } ?>
                 </article>
             </main><!-- #main -->
-            <?php 
-            //get_template_part('template-parts/contextual-sidebar-single'); 
-            get_sidebar();
-            ?>
+            <aside>
+                <?php if (( is_active_sidebar( 'tag_cloud_sidebar' ) )&& (in_array('newsflash', $terms))): ?>
+                <aside id="tagcloud-sidebar" class="widget-area" role="complementary">
+                    <?php dynamic_sidebar( 'tag_cloud_sidebar' ); ?>
+                </aside><!-- #primary-sidebar -->
+                <?php endif; ?>
+                <?php 
+                get_sidebar();
+                ?>
+            </aside>
         </div>
         <footer class="read-more-article">
             <div>
@@ -127,7 +136,7 @@ $themeSlugRewrite = "sedoo-theme-labo";
             ?>     
             </div>
         </footer>
-        <?php get_template_part('template-parts/nav-box'); ?>
+        <?php //get_template_part('template-parts/nav-box'); ?>
 	</div><!-- #primary -->
 <?php
 endwhile; // End of the loop.
