@@ -148,6 +148,27 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
     box-shadow: 1px 1px 3px var(--main-color);
 }
 
+/*** TOP HEADER NAV **/
+
+header[id="masthead"] .wrapper .nav-container {
+    flex-wrap: wrap;
+}
+
+[id="ul-top-header"] {
+    display: flex;
+    font-family: arial, sans-serif;
+    font-size:1.5rem;
+}
+[id="ul-top-header"] li {
+    margin-right:20px;
+}
+@media (max-width:1024px) {
+    #top-header {
+        display: none;
+    }
+}
+
+
 /*** HOMEPAGE **/
 
 .home #primary,

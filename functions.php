@@ -5,6 +5,14 @@ function theme_enqueue_styles() {
 
 }
 
+/**
+ * REGISTER NAV MENU AREAS
+ */
+register_nav_menus(array('top-header' => 'Top header navigation'));
+
+ /**
+  * REGISTER WIDGET AREAS
+  */
 function sedoo_wpthch_geotraces_widgets_init() {
 
     register_sidebar( array(
