@@ -384,6 +384,25 @@ acf_add_local_field_group(array(
 			'step' => '',
 		),
 		array(
+			'key' => 'field_5ddfed8767c61',
+			'label' => '"More articles" button label',
+			'name' => 'sedoo-block-post-list-showmore-button-label',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
 			'key' => 'field_5dd6a71dc219d',
 			'label' => 'Show "More articles" button',
 			'name' => 'sedoo-block-post-list-showmore-button',
@@ -421,6 +440,7 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 ));
+
 
 endif;
 ?>

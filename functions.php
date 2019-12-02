@@ -46,7 +46,7 @@ function sedoo_wpthch_geotraces_widgets_init() {
 add_action( 'widgets_init', 'sedoo_wpthch_geotraces_widgets_init' );
 
 
-function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit, $offset, $button) {
+function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit, $offset, $buttonLabel, $button) {
     global $post;
     
     $argsListPost = array(
@@ -109,7 +109,7 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit,
         ?>	
     </section>
     <?php if ($button == 1) { ?>    
-    <a href="<?php echo $url; ?>" class="btn"><?php echo __('See all '.$title.'', 'sedoo-wpth-labs'); ?></a>
+    <a href="<?php echo $url; ?>" class="btn"><?php echo $buttonLabel; ?></a>
     <?php
         }
     ?>
