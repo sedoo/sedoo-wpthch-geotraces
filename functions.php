@@ -46,7 +46,7 @@ function sedoo_wpthch_geotraces_widgets_init() {
 add_action( 'widgets_init', 'sedoo_wpthch_geotraces_widgets_init' );
 
 
-function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit, $offset, $button) {
+function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit, $offset, $buttonLabel, $button) {
     global $post;
     
     $argsListPost = array(
@@ -109,7 +109,7 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit,
         ?>	
     </section>
     <?php if ($button == 1) { ?>    
-    <a href="<?php echo $url; ?>" class="btn"><?php echo __('See all '.$title.'', 'sedoo-wpth-labs'); ?></a>
+    <a href="<?php echo $url; ?>" class="btn"><?php echo $buttonLabel; ?></a>
     <?php
         }
     ?>
@@ -146,6 +146,8 @@ function sedoo_wpthch_geotraces_tag_widget_limit($args){
  if(isset($args['taxonomy']) && $args['taxonomy'] == 'post_tag'){
   $args['number'] = 0; //Limit number of tags
  }
+ $args['smallest'] = '10';
+ $args['largest'] = '20';
  
  return $args;
 }
@@ -179,6 +181,15 @@ function sedoo_wpthch_geotraces_show_categories($categories, $slugRewrite) {
   <?php
       } 
   }
+
+/******************************************************************
+ * Activate categories to pages 
+ */
+
+function sedoo_wpthch_geotraces_categories_to_pages() {
+register_taxonomy_for_object_type( 'category', 'page' );
+}
+add_action( 'init', 'sedoo_wpthch_geotraces_categories_to_pages' );
 
 /**
  * Include ACF Fields
