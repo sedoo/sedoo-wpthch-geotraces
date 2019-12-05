@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.6.4
+Version:      0.7.0
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -526,5 +526,32 @@ footer .intranet li a:hover img {
 [data-role="listSscMembers"] input[type="radio"]:checked ~ div {
     display: block;
 }
+
+/***  SEDOO BLOCKS **/
+
+div.sedoo-button-block-group a.sedoo-button-block {
+    background: var(--main-color);
+}
+
+div.sedoo-button-block-group a.sedoo-button-block:hover {
+    background: transparent;
+}
+
+div.sedoo-button-block-group a.sedoo-button-block > span {
+    color:#FFF;
+}
+
+div.sedoo-button-block-group a.sedoo-button-block:hover > span {
+    color:var(--main-color);
+}
+
+div.sedoo-button-block-group a.sedoo-button-block > svg {
+    fill:#FFF;
+}
+
+div.sedoo-button-block-group a.sedoo-button-block:hover > svg {
+    fill:var(--main-color);
+}
+
 
 
