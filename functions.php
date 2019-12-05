@@ -146,6 +146,8 @@ function sedoo_wpthch_geotraces_tag_widget_limit($args){
  if(isset($args['taxonomy']) && $args['taxonomy'] == 'post_tag'){
   $args['number'] = 0; //Limit number of tags
  }
+ $args['smallest'] = '10';
+ $args['largest'] = '20';
  
  return $args;
 }
@@ -179,6 +181,15 @@ function sedoo_wpthch_geotraces_show_categories($categories, $slugRewrite) {
   <?php
       } 
   }
+
+/******************************************************************
+ * Activate categories to pages 
+ */
+
+function sedoo_wpthch_geotraces_categories_to_pages() {
+register_taxonomy_for_object_type( 'category', 'page' );
+}
+add_action( 'init', 'sedoo_wpthch_geotraces_categories_to_pages' );
 
 /**
  * Include ACF Fields
