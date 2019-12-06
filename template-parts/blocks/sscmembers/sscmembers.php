@@ -83,14 +83,14 @@ foreach ( $sscUsers as $user ) {
         <input type="radio" name="radioDeploy[]" id="deploy<?php echo $i;?>">
         <label for="deploy<?php echo $i;?>"><span></span></label>
         <header>
-            <p><?php echo $user_meta_geotraces_user_last_name;?>, <?php echo $user_meta_geotraces_user_first_name;?> - <?php echo $user_meta_geotraces_user_country;?>
+            <p><?php echo $user_meta_geotraces_user_last_name;?>, <?php echo $user_meta_geotraces_user_first_name;?> - <span class="uppercase"><?php echo $user_meta_geotraces_user_country;?></span>
                 <br><em><?php echo $user_meta_geotraces_user_position;?></em>
             </p>
         </header>
         
         <div>
             <p><?php echo esc_html( $user->user_email );?></p>
-            <address><?php echo $user_meta_geotraces_user_address;?></address>
+            <address><?php echo $user_meta_geotraces_user_address;?> - <?php echo $user_meta_geotraces_user_country;?></address>
             <p>Tel:<?php echo $user_meta_geotraces_user_phone;?></p>
         </div>
     </article>

@@ -116,6 +116,11 @@ header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-co
     max-width: 230px;
 }
 
+/*** UTILZ  ***/
+.uppercase {
+    text-transform: uppercase;
+}
+
 /*** ALIGNEMENT **/
 .alignleft {
 	float: left;
@@ -174,7 +179,12 @@ header[id="masthead"] .wrapper .nav-container {
     }
 }
 
-
+/**** NAV   ***/
+@media (max-width:1140px) {
+    ul[id="primary-menu"] .menu-item .sub-menu .menu-item a {
+        font-size: 1.6rem;
+    }
+}
 /*** HOMEPAGE **/
 
 .home #primary,
@@ -358,12 +368,15 @@ header[id="masthead"] .wrapper .nav-container {
 
 a.tag-cloud-link,
 span.tag-cloud-link {
+    font-family: Arial, Helvetica, sans-serif;
     display: inline-block;
-    margin-bottom: 3px;
-    padding: 2px 5px;
-    border: 1px solid var(--main-color);
+    margin-bottom: 5px;
+    padding: 3px 10px 5px;
+    color:#333;
+    border: 1px solid #ddd; /*var(--main-color);*/
     border-radius: 5px;
     text-decoration: none;
+    background:#F0F0F0;
 }
 
 span.tag-cloud-link {
@@ -543,25 +556,62 @@ div.sedoo-button-block-group a.sedoo-button-block {
     background: var(--main-color);
 }
 
+div.sedoo-button-block-group.homepageButton  a.sedoo-button-block {
+    height: 100px;
+    width: 150px;
+    padding:10px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    border: none;
+    background: transparent;
+    word-break: break-word;
+    font-size: 1.5rem;
+}
+
+
 div.sedoo-button-block-group a.sedoo-button-block:hover {
     background: transparent;
 }
 
-div.sedoo-button-block-group a.sedoo-button-block > span {
-    color:#FFF;
-}
-
-div.sedoo-button-block-group a.sedoo-button-block:hover > span {
-    color:var(--main-color);
+div.sedoo-button-block-group.homepageButton a.sedoo-button-block:hover {
+    background: var(--main-color);
 }
 
 div.sedoo-button-block-group a.sedoo-button-block > svg {
     fill:#FFF;
 }
 
+div.sedoo-button-block-group.homepageButton  a.sedoo-button-block > svg {
+    transform: scale(2);
+    margin-bottom: 10px;
+    fill:var(--main-color);
+}
+
 div.sedoo-button-block-group a.sedoo-button-block:hover > svg {
     fill:var(--main-color);
 }
+div.sedoo-button-block-group.homepageButton a.sedoo-button-block:hover > svg {
+    fill:#FFF;
+}
+
+div.sedoo-button-block-group a.sedoo-button-block > span {
+    color:#FFF;
+}
+div.sedoo-button-block-group.homepageButton a.sedoo-button-block > span {
+    color:var(--main-color);
+    border-bottom:1px solid var(--main-color);
+}
+
+div.sedoo-button-block-group a.sedoo-button-block:hover > span {
+    color:var(--main-color);
+}
+div.sedoo-button-block-group.homepageButton a.sedoo-button-block:hover > span {
+    border-bottom:1px solid #FFF;
+    color:#FFF;
+}
+
+
 
 
 

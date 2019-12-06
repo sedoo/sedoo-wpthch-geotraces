@@ -146,8 +146,8 @@ function sedoo_wpthch_geotraces_tag_widget_limit($args){
  if(isset($args['taxonomy']) && $args['taxonomy'] == 'post_tag'){
   $args['number'] = 0; //Limit number of tags
  }
- $args['smallest'] = '10';
- $args['largest'] = '20';
+ $args['smallest'] = '12';
+ $args['largest'] = '18';
  
  return $args;
 }
