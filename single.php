@@ -8,7 +8,7 @@
  */
 
 get_header(); 
-
+$code_color=labs_by_sedoo_main_color();
 $format = get_post_format();
 $categories = get_the_category();
 $terms=array();
@@ -35,9 +35,15 @@ $themeSlugRewrite = "category";
                 <?php the_post_thumbnail('cover'); ?>
             </header>
         <?php 
+        } else {
+            $headerBorder="";
+            ?>
+            <header id="cover" style="border-top:5px solid <?php echo $code_color;?>;height:auto;">
+            </header>
+        <?php
         }
         ?>
-        <div class="wrapper-layout">
+        <div class="wrapper-layout" <?php if (isset($headerBorder)) {echo "style=\"padding-top:140px\"";}?>>
             <main id="main" class="site-main">
                 <article id="post-<?php the_ID();?>">	
                     <header>
@@ -73,69 +79,7 @@ $themeSlugRewrite = "category";
                 ?>
             </aside>
         </div>
-        <footer class="read-more-article">
-            <div>
-            <?php
-            $args = array(
-                'post_type'             => 'post',
-                'post_status'           => array( 'publish' ),
-                'posts_per_page'        => '2',           
-                'post__not_in'          => array(get_the_ID()), 
-                'orderby'               => 'date',
-                'order'                 => 'DESC',
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'category',
-                        'field'    => 'slug',
-                        'terms'    => $terms,
-                    ),
-                ),
-            );
-            $the_query = new WP_Query( $args );
-
-            if ( $the_query->have_posts() ) {  
-            ?>
-                <h2><?php echo __("Others news", 'sedoo-wpth-labs'); ?> :</h2>
-                <div class="post-loop">
-                <?php                
-                    while ( $the_query->have_posts() ) {
-                        $the_query->the_post();
-
-                        ?>
-                        <a class="post-preview" href="<?php the_permalink(); ?>">   
-                            <div>
-                                <h3><?php the_title(); ?></h3>
-                            </div>
-                            <div class="post-img">
-                                <?php if (get_the_post_thumbnail()) {
-                                    the_post_thumbnail();
-                                } else {
-                                    if (catch_that_image() ==  "no_image" ){
-                                        $custom_logo_id = get_theme_mod( 'custom_logo' );
-                                        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
-                                        <img class="object-fit-contain" src="<?php echo $image[0]; ?>" alt="" />
-                                    <?php } else {
-                                        echo '<img src="';
-                                        echo catch_that_image();
-                                        echo '" alt="" />'; 
-                                    }
-                                }
-                                ?>
-                            </div>
-                        </a>
-                    <?php
-                    }
-                ?>            
-               </div>
-            <?php
-            } else {
-                // no posts found
-            }
-            /* Restore original Post Data */
-            wp_reset_postdata();
-            ?>     
-            </div>
-        </footer>
+        
         <?php //get_template_part('template-parts/nav-box'); ?>
 	</div><!-- #primary -->
 <?php

@@ -11,7 +11,7 @@ get_header();
 
 // get the current taxonomy term
 $term = get_queried_object();
-
+$code_color=labs_by_sedoo_main_color();
 $tax_layout = get_field('tax_layout', $term);
 $cover = get_field( 'tax_image', $term);
 
@@ -23,7 +23,7 @@ $cover = get_field( 'tax_image', $term);
 		if ( !empty($cover)) {
 				$coverStyle = "background-image:url(".$cover['url'].")";
 			} else {
-				$coverStyle = "border-top:5px solid #309fb3;height:auto;";
+				$coverStyle = "border-top:5px solid ".$code_color.";height:auto;";
 			}
 			?>
 			

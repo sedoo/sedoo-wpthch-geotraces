@@ -241,6 +241,13 @@ header[id="masthead"] .wrapper .nav-container {
     border-top: 4px solid var(--main-color);
 }
 
+.post .entry-header, .post-horizontal .entry-header {
+    min-height: 50px;
+    max-height: 235px;
+    height: auto;
+
+}
+
 .post:nth-child(8n) .entry-header p {
     left: -10px;
     right: inherit;
@@ -474,6 +481,25 @@ footer .intranet li a:hover img {
 
 .copyright .wrapper.site-info .intranet {
     margin-top:0;
+}
+
+/*** PARTNER LIST ***/
+.partners-list {
+    background:#FFF;
+}
+.partners-list ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.partners-list .wrapper-layout {
+    padding:0 20px 70px;
+}
+
+.partners-list .wrapper-layout a:hover {
+    background:none;
 }
 
 /*** BLOCK SSC MEMBERS ***/

@@ -13,18 +13,24 @@
  */
 
 get_header();
-
+$code_color=labs_by_sedoo_main_color();
 ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
             <?php
-            if (get_the_post_thumbnail()) {
+                if ( has_post_thumbnail() ) {
             ?>
                 <header id="cover">
-                    <?php the_post_thumbnail(); ?>
+                    <?php the_post_thumbnail('cover'); ?>
                 </header>
             <?php 
+            } else {
+                $headerBorder="";
+                ?>
+                <header id="cover" style="border-top:5px solid <?php echo $code_color;?>;height:auto;">
+                </header>
+            <?php
             }
             ?>
             <div class="wrapper-content">
