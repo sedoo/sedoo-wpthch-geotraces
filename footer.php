@@ -160,35 +160,7 @@ $options_list_footer = get_field('list_choice', 'option');
                         </ul>
                     </div>
                 <?php endif; ?>
-                <?php if( have_rows('partenaires', 'option') ): ?>
-                    <div class="partners-list">
-                        <h2><?php echo __('Tutelles', 'sedoo-wpth-labs'); ?></h2>
-                        <ul id="partners-sidebar" class="primary-sidebar widget-area inline-list" role="complementary">
-                        <?php while( have_rows('partenaires', 'option') ): the_row(); 
 
-                            // vars
-                            $link = get_sub_field('lien_partenaire', 'option');
-                            $logo = get_sub_field('logo_partenaire', 'option');
-
-                            ?>
-
-                            <li class="list">
-
-                                <?php if( $link ): ?>
-                                    <a href="<?php echo $link; ?>">
-                                <?php endif; ?>
-                                    <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt'] ?>" />
-                                <?php if( $link ): ?>
-                                    </a>
-                                <?php endif; ?>
-
-                            </li>
-
-                        <?php endwhile; ?>
-
-                        </ul>
-                    </div>
-                <?php endif; ?>
             </div>
         </div>
         <div class="copyright">
@@ -223,6 +195,34 @@ $options_list_footer = get_field('list_choice', 'option');
 
             </div><!-- .site-info -->
         </div>
+        <?php if( have_rows('partenaires', 'option') ): ?>
+            <div class="partners-list">
+                <ul id="partners-sidebar" class="inline-list wrapper-layout" role="complementary">
+                <?php while( have_rows('partenaires', 'option') ): the_row(); 
+
+                    // vars
+                    $link = get_sub_field('lien_partenaire', 'option');
+                    $logo = get_sub_field('logo_partenaire', 'option');
+
+                    ?>
+
+                    <li class="list">
+
+                        <?php if( $link ): ?>
+                            <a href="<?php echo $link; ?>">
+                        <?php endif; ?>
+                            <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt'] ?>" />
+                        <?php if( $link ): ?>
+                            </a>
+                        <?php endif; ?>
+
+                    </li>
+
+                <?php endwhile; ?>
+
+                </ul>
+            </div>
+        <?php endif; ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <?php get_template_part( 'template-parts/shortcut', 'page' ); ?>

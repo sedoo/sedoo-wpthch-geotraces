@@ -8,30 +8,30 @@
  */
 
 
+
+if (has_post_thumbnail() && (catch_that_image() !==  "no_image") ) {
+    $postThumbnail = "<figure>";
+    if (has_post_thumbnail()) {
+        $postThumbnail .= get_the_post_thumbnail($post->ID, 'thumbnail-loop');
+    } else {
+        if (catch_that_image() !==  "no_image" ){
+            $postThumbnail .= "<img src=\"".catch_that_image()."\" alt=\"\" />"; 
+            // echo '<img src="';
+            // echo catch_that_image();
+            // echo '" alt="" />'; 
+        } 
+    }
+    $postThumbnail .= "</figure>";
+}
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <a href="<?php the_permalink(); ?>"></a>
-	<header class="entry-header">
-        <figure>
-            <?php 
-            if (has_post_thumbnail()) {
-                the_post_thumbnail('thumbnail-loop');
-            } else {
-                if (catch_that_image() ==  "no_image" ){
-                    $logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'thumbnail-loop', false);
-                    echo '<img src="'.$logo[0].'" alt="" class="custom-logo">';
-                } else {
-                    echo '<img src="';
-                    echo catch_that_image();
-                    echo '" alt="" />'; 
-                }
-                
-            }?>
-            
-        </figure>
+	<header class="entry-header">  
+        <?php echo $postThumbnail;?>
         <p>
-        <?php     $categories = get_the_category();
+        <?php $categories = get_the_category();
             if ( ! empty( $categories ) ) {
             echo esc_html( $categories[0]->name );   
         }; ?>
