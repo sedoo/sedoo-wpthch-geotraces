@@ -9,7 +9,7 @@
 
 
 
-if (has_post_thumbnail() && (catch_that_image() !==  "no_image") ) {
+if (has_post_thumbnail() || (catch_that_image() !==  "no_image") ) {
     $postThumbnail = "<figure>";
     if (has_post_thumbnail()) {
         $postThumbnail .= get_the_post_thumbnail($post->ID, 'thumbnail-loop');
@@ -29,7 +29,9 @@ if (has_post_thumbnail() && (catch_that_image() !==  "no_image") ) {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <a href="<?php the_permalink(); ?>"></a>
 	<header class="entry-header">  
-        <?php echo $postThumbnail;?>
+        <?php 
+        if (isset($postThumbnail)){ echo $postThumbnail; }
+        ?>
         <p>
         <?php $categories = get_the_category();
             if ( ! empty( $categories ) ) {
