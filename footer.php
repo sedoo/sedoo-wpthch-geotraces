@@ -16,124 +16,26 @@ $options_list_footer = get_field('list_choice', 'option');
 
 	<footer id="colophon" class="site-footer">
         <div class="wrapper">
-            <div class="infos-pratiques">
-                <?php //the_custom_logo(); ?>
-                <?php if( have_rows('location_repeater', 'option') ): ?>
-                <?php while( have_rows('location_repeater', 'option')): the_row();
-                    $nom_labo = get_sub_field('nom_laboratoire', 'option');
-                    $adresse_labo = get_sub_field('adresse', 'option');
-                    $contact_labo = get_sub_field('contact_laboratoire', 'option');
-                    $tel_contact = get_sub_field('telephone_contact', 'option');
-                    $fax_contact = get_sub_field('fax_contact', 'option');
-                    $mail_contact = get_sub_field('mail_contact', 'option');
-                    $map = get_sub_field('map', 'option');
-                ?>
-                <div class="row-infos">
-                    <div>
-                        <p><b><?php echo $nom_labo; ?></b></p>
-                        <address><?php echo $adresse_labo; ?></address>
-                    </div>
-                    <div>
-                        <p><b><?php echo $contact_labo; ?></b></p>
-                        <p><?php echo __('Tel', 'sedoo-wpth-labs'); ?> : <a href="tel:<?php echo $tel_contact; ?>"><?php echo $tel_contact; ?></a></p>
-                        <?php if($fax_contact) { ?>
-                            <p><?php echo __('Fax', 'sedoo-wpth-labs'); ?> : <?php echo $fax_contact; ?></p>
-                        <?php } ?>
-                        <p><a href="mailto:<?php echo $mail_contact; ?>"><?php echo $mail_contact; ?></a></p>
-                    </div>
+            <div>
+                <?php if ( is_active_sidebar( 'footer_menu_1' ) ) : ?>
+                <div class="footer-menu widget-area" id="footer_menu_1" role="complementary">
+                    <?php dynamic_sidebar( 'footer_menu_1' ); ?>
                 </div>
-                <?php endwhile; ?>
+                <?php endif; ?>
+
+                <?php if ( is_active_sidebar( 'footer_menu_2' ) ) : ?>
+                <div class="footer-menu widget-area" id="footer_menu_2" role="complementary">
+                    <?php dynamic_sidebar( 'footer_menu_2' ); ?>
+                </div>
+                <?php endif; ?>
+
+                <?php if ( is_active_sidebar( 'footer_menu_3' ) ) : ?>
+                <div class="footer-menu widget-area" id="footer_menu_3" role="complementary">
+                    <?php dynamic_sidebar( 'footer_menu_3' ); ?>
+                </div>
                 <?php endif; ?>
             </div>
-            <!-- <div class="footer-menu"> -->
-                <!-- <?php if (has_nav_menu('primary-menu')) {
-                    wp_nav_menu( array(
-                        'theme_location' => 'primary-menu',
-                        'menu_id'        => 'primary-menu',
-                    ) );
-                } else{
-                    wp_nav_menu( array(
-                        'theme_location' => 'burger-menu',
-                        'menu_id'        => 'burger-menu',
-                    ) );
-                }?> -->
-            <!-- </div> -->
-            <ul class="footer-categories">
-                <?php if( $options_list_footer === 'categories'){
-                    wp_list_categories(array(
-                        'title_li' => '',
-                        'exclude' => '1'
-                    )); 
-                }
-                ?>
-                <?php if( $options_list_footer === 'thematic'){
-                    // Get the taxonomy's terms
-                    $terms = get_terms(
-                        array(
-                            'taxonomy'   => 'sedoo-theme-labo',
-                            'hide_empty' => false
-                        )
-                    );
-
-                    // Check if any term exists
-                    if ( ! empty( $terms ) && is_array( $terms ) ) {
-                        // Run a loop and print them all
-                        foreach ( $terms as $term ) { ?>
-                            <li class="cat-item">
-                                <a href="<?php echo esc_url( get_term_link( $term ) ) ?>">
-                                <?php echo $term->name; ?>
-                                </a>
-                            </li>
-                <?php
-                        }
-                    } 
-                }
-                ?>
-                <?php if( $options_list_footer === 'custom'){
-
-                    $terms = get_field('custom_list_category', 'option');
-
-                    if( $terms ): ?>
-
-                        <?php foreach( $terms as $term ): ?>
-
-                            <li class="cat-item">
-                                <a href="<?php echo get_term_link( $term ); ?>">
-                                    <?php echo $term->name; ?>
-                                </a>
-                            </li>
-
-                        <?php endforeach;
-                    endif; 
             
-                
-                    $terms = get_field('custom_list_thematic', 'option');
-
-                    if( $terms ): ?>
-
-                        <?php foreach( $terms as $term ): ?>
-
-                            <li class="cat-item">
-                                <a href="<?php echo get_term_link( $term ); ?>">
-                                    <?php echo $term->name; ?>
-                                </a>
-                            </li>
-
-                        <?php endforeach;
-                    endif; 
-                    ?>
-
-                    <?php if(get_field('ajout_evenements', 'option') === true) { ?>
-                        <li class="cat-item">
-                            <a href="<?php echo get_field('link_events_page', 'option'); ?>">
-                                <?php echo __('Événements'); ?>
-                            </a>
-                        </li>
-                    <?php } ?>
-                <?php    
-                }
-                ?>
-            </ul>
             <div class="social-partenaires">
                  <?php if( have_rows('reseaux_sociaux', 'option') ): ?>
                     <div class="social-list">
