@@ -105,10 +105,18 @@ $options_theme = get_field('ajout_options', 'option');
 <?php
 
 
-    get_template_part( 'template-parts/search-form', 'page' );
-    get_template_part( 'template-parts/location', 'page' );
-    get_template_part( 'template-parts/annuaire', 'page' );
-    get_template_part( 'template-parts/calendar', 'page' );
+get_template_part( 'template-parts/search-form', 'page' );
 
+if( get_field('display_shortcut', 'option') == 'oui' ) {
+    get_template_part( 'template-parts/location', 'page' );
+}
+
+if( $options_theme && in_array('annuaire', $options_theme) ) { 
+    get_template_part( 'template-parts/annuaire', 'page' );
+}
+
+if( $options_theme && in_array('calendar', $options_theme) ) {
+    get_template_part( 'template-parts/calendar', 'page' );
+}
 
 ?>
