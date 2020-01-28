@@ -9,13 +9,13 @@
  * @package labs_by_Sedoo
  */
 $options_list_footer = get_field('list_choice', 'option');
-
+$code_color=labs_by_sedoo_main_color();
 ?>
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-        <div class="wrapper">
+	<footer id="colophon" class="site-footer" style="background:<?php echo $code_color?>;">
+        <div class="wrapper-layout">
             <div>
                 <?php if ( is_active_sidebar( 'footer_menu_1' ) ) : ?>
                 <div class="footer-menu widget-area" id="footer_menu_1" role="complementary">
@@ -39,7 +39,6 @@ $options_list_footer = get_field('list_choice', 'option');
             <div class="social-partenaires">
                  <?php if( have_rows('reseaux_sociaux', 'option') ): ?>
                     <div class="social-list">
-                        <h2><?php echo __('Follow us', 'sedoo-wpth-labs'); ?></h2>
                         <ul class="inline-list">
 
                         <?php while( have_rows('reseaux_sociaux', 'option') ): the_row(); 
@@ -67,15 +66,19 @@ $options_list_footer = get_field('list_choice', 'option');
         </div>
         <div class="copyright">
             <div class="site-info wrapper">
-                <p>© Copyright <?php echo get_theme_mod('labs_by_sedoo_copyright');?></p>
-                <nav id="mentions-menu">
-                    <?php if (has_nav_menu('mentions-menu')) { 
+                <?php if (has_nav_menu('mentions-menu')) { 
+                    ?>
+                    <nav id="mentions-menu">
+                    <?php
                         wp_nav_menu( array(
                             'theme_location' => 'mentions-menu',
                             'menu_id'        => 'mentions-menu',
                         ) );
-                    } ?>
-                </nav>
+                    ?>
+                    </nav>
+                <?php
+                    }
+                ?> 
                 <?php if(get_field('lien_intranet', 'option') or get_field('lien_webmail' , 'option')) { ?>
                 <ul class="intranet">
                     <?php if(get_field('lien_intranet', 'option')){ ?>
@@ -129,11 +132,6 @@ $options_list_footer = get_field('list_choice', 'option');
 </div><!-- #page -->
 <?php get_template_part( 'template-parts/shortcut', 'page' ); ?>
 <?php wp_footer(); ?>   
-<!--
-<script>
-    /* INIT DARKMODE */
-    new Darkmode().showWidget();   
-</script>
--->
+<!--<p>© Copyright <?php echo get_theme_mod('labs_by_sedoo_copyright');?></p>-->
 </body>
 </html>

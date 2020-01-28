@@ -448,6 +448,23 @@ ol.tribe-list-widget h4 {
     filter: none;
 }
 
+.social-list li a::before { 
+    border:none;
+}
+
+.social-list li a::after {
+    filter: invert(100%);
+}
+
+.social-partenaires .social-list li a:hover::before {
+    background:rgba(255,255,255,.7);
+}
+
+.social-partenaires .social-list li a:hover::after {
+    filter: invert(0%);
+    -webkit-filter: invert(0%);
+}
+
 #shortcuts .social-link a[href*="twitter"] {
     background: url("image/logo_twitter.svg") no-repeat;
 }
@@ -463,6 +480,61 @@ ol.tribe-list-widget h4 {
 }
 #shortcuts .social-link a[href*="instagram"] {
     background: url("image/logo_instagram.svg") no-repeat;
+}
+
+/**********************************     FOOTER      ****************************************************************************      FOOTER     *******************/
+
+footer[id="colophon"] {
+/*    background-color: var(--second-color);*/
+
+}
+
+footer[id="colophon"] > div,
+footer[id="colophon"] > div > :first-child {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer[id="colophon"] > div.wrapper-layout   > :first-child {
+    flex: 0 1 900px;
+}
+
+footer[id="colophon"] > div.wrapper-layout > :last-child {
+    flex: 0 1 200px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+/*** FOOTER MENU ***/
+.footer-menu.widget-area {
+    flex:0 0 250px;
+}
+
+.footer-menu.widget-area  ul{ 
+    list-style: none;
+    padding:0;
+}
+
+.footer-menu.widget-area * {
+    color:#FFF;
+}
+
+.footer-menu.widget-area ul.menu > li {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 30px;
+} 
+
+.footer-menu.widget-area a {
+    text-decoration: none;
+}
+
+.footer-menu.widget-area ul.menu > li li {
+    margin:10px 0;
+    font-size: 1.5rem;
+    font-weight: normal;
 }
 
 /*** INTRANET FOOTER LINK ***/
@@ -485,6 +557,8 @@ footer .intranet li a:hover img {
     margin-top:0;
 }
 
+
+
 /*** PARTNER LIST ***/
 .partners-list {
     background:#FFF;
@@ -502,6 +576,11 @@ footer .intranet li a:hover img {
 
 .partners-list .wrapper-layout a:hover {
     background:none;
+}
+
+/**** OVERLAY LAYOUT ***/
+.overlay.search-form:not(.open) .close {
+    display:none;
 }
 
 /*** BLOCK SSC MEMBERS ***/
