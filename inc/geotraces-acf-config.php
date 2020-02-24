@@ -97,6 +97,13 @@ acf_add_local_field_group(array(
 				'value' => 'all',
 			),
 		),
+		array(
+			array(
+				'param' => 'user_role',
+				'operator' => '==',
+				'value' => 'scc',
+			),
+		),
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
