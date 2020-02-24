@@ -24,7 +24,7 @@ OVERRIDE CSS
 }
 
 div[id="page"] {
-    padding: 130px 20px 20px;
+    padding: 130px 0 20px;
 }
 
 .home header[id="cover"]::before, 
@@ -36,9 +36,18 @@ div[id="page"] {
     display: none;
 }
 
-h1, .h1 {
+h1, .h1,
+.single-post main article header h1, 
+.single-event main article header h1 {
     font-size: 3rem;
 }
+
+.home header[id="cover"] .wrapper h1, .home header[id="cover"] .wrapper-content h1, .home header[id="cover"] .archive .site-content .site-branding h1, .archive .site-content .home header[id="cover"] .site-branding h1,
+.home header[id="cover"] .wrapper h2, .home header[id="cover"] .wrapper-content h2, .home header[id="cover"] .archive .site-content .site-branding h2, .archive .site-content .home header[id="cover"] .site-branding h2
+{
+    text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+}
+
 
 h2, .h2 {
     font-size: 2.5rem;
@@ -197,7 +206,7 @@ header[id="masthead"] .wrapper .nav-container {
 .home #primary > main,
 #content-area.newsflash > .wrapper-layout-newsflash > main {
     flex:1 1 800px;
-    padding:0 40px 0;
+    padding:0 20px 0;
 }
 .home #primary > aside,
 #content-area.newsflash > .wrapper-layout-newsflash > aside {
@@ -230,7 +239,7 @@ header[id="masthead"] .wrapper .nav-container {
 
 .post-wrapper .post {
     width: auto;
-    flex:1 0 330px;
+    flex:1 1 330px;
     padding: 20px;
     -webkit-box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5);
@@ -456,6 +465,10 @@ ol.tribe-list-widget h4 {
     filter: invert(100%);
 }
 
+.social-partenaires .social-list li a:hover {
+    background:transparent;
+}
+
 .social-partenaires .social-list li a:hover::before {
     background:rgba(255,255,255,.7);
 }
@@ -523,8 +536,8 @@ footer[id="colophon"] > div.wrapper-layout > :last-child {
 
 .footer-menu.widget-area ul.menu > li {
     font-weight: bold;
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 } 
 
 .footer-menu.widget-area a {
@@ -581,6 +594,28 @@ footer .intranet li a:hover img {
 /**** OVERLAY LAYOUT ***/
 .overlay.search-form:not(.open) .close {
     display:none;
+}
+
+/**** 404 ***/
+
+.error404 main {
+    padding:30px;
+}
+
+.error404 .search-form .search-field {
+    background: #EEE;
+    width: 30%;
+}
+
+ .search-form .search-submit {
+    
+}
+
+.error404 .search-form .search-field,
+.error404 .search-form .search-submit {
+    margin-left: 30px;
+    transform: translateX(0);
+    opacity: 1;
 }
 
 /*** BLOCK SSC MEMBERS ***/

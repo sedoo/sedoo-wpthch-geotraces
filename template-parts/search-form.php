@@ -10,7 +10,7 @@
         <h2>Rechercher</h2>
         <?php get_search_form(); ?>
         <div class="close">
-            <label>Fermer</label>
+            <label>Close</label>
             <button>
                 <span></span>
                 <span></span>

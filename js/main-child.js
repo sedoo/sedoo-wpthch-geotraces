@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
         $("body").toggleClass("menu-expanded");
 //        $(".menu-helper").toggleClass("visible");
 		$(".burger label").text(function(i, v){
-		   return v === 'Menu' ? 'Fermer' : 'Menu'
+		   return v === 'Menu' ? 'Close' : 'Menu'
 		});
 
         // Chaque élément du menu s'affiche avec une transition différée
