@@ -218,6 +218,13 @@ register_taxonomy_for_object_type( 'category', 'page' );
 }
 add_action( 'init', 'sedoo_wpthch_geotraces_categories_to_pages' );
 
+/* redirect home after login */
+function login_redirect( $redirect_to, $request, $user ){
+    return home_url();
+}
+add_filter( 'login_redirect', 'login_redirect', 10, 3 );
+
+
 /**
  * Include ACF Fields
  */
