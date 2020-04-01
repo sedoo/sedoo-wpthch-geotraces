@@ -69,7 +69,19 @@ $themeSlugRewrite = "category";
                 </article>
             </main><!-- #main -->
             <aside>
-                <?php if (( is_active_sidebar( 'tag_cloud_sidebar' ) )&& (in_array('newsflash', $terms))): ?>
+                <?php 
+                // var_dump($themes);
+                // $terms_fields=array();
+                // foreach ($themes as $term_slug) {
+                //     array_push($terms_fields, $term_slug->slug);
+                // }
+
+                /**
+                 * BUG : les tags ne s'affichent pas, erreur dans la fin de la fonction !!!
+                 */
+                // sedoo_wpthch_geotraces_postlist_by_term('Others posts', $terms_fields, 'list', '5', '0', "More posts", "1");
+
+                if (( is_active_sidebar( 'tag_cloud_sidebar' ) )&& (in_array('newsflash', $terms))): ?>
                 <aside id="tagcloud-sidebar" class="widget-area" role="complementary">
                     <?php dynamic_sidebar( 'tag_cloud_sidebar' ); ?>
                 </aside><!-- #primary-sidebar -->
