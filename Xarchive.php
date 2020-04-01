@@ -40,7 +40,16 @@ $cover = get_field( 'tax_image', $term);
 				the_archive_description( '<div class="archive-description">', '</div>' );
 			}
 		?>
-		<?php if ( have_posts() ) : 	
+		<?php
+            /**
+             * WP_Query pour lister tous les types de posts
+             */
+			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            /* sedoo_wpth_labs_get_queried_content_arguments(post_types, taxonomy, slug, display, paged) */
+			sedoo_wpth_labs_get_queried_content_arguments(array('post', 'page'), 'category', $term->slug, $tax_layout, $paged);
+		?>
+		<?php 
+		if ( have_posts() ) : 	
 
 			if ( $tax_layout == "grid") {
 				$listingClass = "post-wrapper";
