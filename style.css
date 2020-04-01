@@ -250,13 +250,13 @@ header[id="masthead"] .wrapper .nav-container {
     border-top: 4px solid var(--main-color);
 }
 
-.post .entry-header, .post-horizontal .entry-header {
+/* .post .entry-header, .post-horizontal .entry-header {
     min-height: 50px;
     max-height: 235px;
     height: auto;
 
-}
-
+} */
+/* 
 .post:nth-child(8n) .entry-header p {
     left: -10px;
     right: inherit;
@@ -272,29 +272,29 @@ header[id="masthead"] .wrapper .nav-container {
 .post-wrapper .post:nth-child(4n)::before,
 .content-list .post:nth-child(4n)::before {
     display: none;
-}
-
+} */
+/* 
 .post-wrapper .post:nth-child(4n) .entry-header,
 .content-list .post:nth-child(4n) .entry-header {
     width:100%;
     margin-right: 0;
     margin-left:0;
     margin-bottom:20px;
-}
+} */
 
-.post-wrapper .post:nth-child(4n) .entry-header,
+/* .post-wrapper .post:nth-child(4n) .entry-header,
 .post-wrapper .post:nth-child(4n) .group-content,
 .post-wrapper .post:nth-child(8n) .group-content,
 .content-list .post:nth-child(4n) .group-content,
 .content-list .post:nth-child(8n) .group-content {
     width: 100%;
     position: relative;
-}
-
+} */
+/* 
 .post:nth-child(8n) .entry-content > h2,
 .post:nth-child(8n) .entry-content > p{
     text-align: left;
-}
+} */
 
 .posts-navigation {
     width:100%;

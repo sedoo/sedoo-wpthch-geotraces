@@ -50,8 +50,8 @@ $themeSlugRewrite = "category";
                         <h1><?php the_title(); ?></h1>
                         <div>
                             <?php 
-                            if( function_exists('sedoo_wpthch_geotraces_show_categories') ){
-                            sedoo_wpthch_geotraces_show_categories($themes, $themeSlugRewrite);
+                            if( function_exists('sedoo_show_categories') ){
+                            sedoo_show_categories($themes, $themeSlugRewrite);
                             }
                             ?>
                             <p class="post-meta"><?php the_date(); ?></p>
