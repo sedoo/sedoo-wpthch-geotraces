@@ -66,30 +66,78 @@ $themeSlugRewrite = "category";
                         <p><?php the_field("sources") ?></p>
                     </footer>
                     <?php } ?>
+                    <?php
+                    if (in_array('newsflash', $terms)) {
+                    ?>
+                    <footer class="wrapper single-footer">
+                        <div>
+                        <?php
+                        $args = array(
+                            'post_type'             => 'post',
+                            'post_status'           => array( 'publish' ),
+                            'posts_per_page'        => '4',           
+                            'post__not_in'          => array(get_the_ID()), 
+                            'orderby'               => 'date',
+                            'order'                 => 'DESC',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'category',
+                                    'field'    => 'slug',
+                                    'terms'    => $terms,
+                                ),
+                            ),
+                        );
+                        $postsList = get_posts ($args);
+                
+                        if ($postsList){       
+                        ?>
+                        <h2><?php echo __('Latest highlights', 'sedoo-wpth-labs') ?></h2>
+                        <section role="listNews" class="post-wrapper">
+                            
+                            <?php
+            
+                            foreach ($postsList as $post) :
+                            setup_postdata( $post );
+                                ?>
+                                <?php
+                                get_template_part( 'template-parts/content', 'grid' );
+                                ?>
+                                <?php
+                            endforeach;
+                            ?>	
+                        </section>
+            
+                        <?php
+                        } else {
+                            // no posts found
+                        }
+                        /* Restore original Post Data */
+                        wp_reset_postdata();
+                        ?>     
+                        </div>
+                    </footer>
+                    <?php
+                    }
+                    ?> 
                 </article>
+                
             </main><!-- #main -->
-            <aside>
-                <?php 
-                // var_dump($themes);
-                // $terms_fields=array();
-                // foreach ($themes as $term_slug) {
-                //     array_push($terms_fields, $term_slug->slug);
-                // }
 
-                /**
-                 * BUG : les tags ne s'affichent pas, erreur dans la fin de la fonction !!!
-                 */
-                // sedoo_wpthch_geotraces_postlist_by_term('Others posts', $terms_fields, 'list', '5', '0', "More posts", "1");
+            <aside id="tagcloud-sidebar" class="widget-area" role="complementary">
+            <?php if (( is_active_sidebar( 'tag_cloud_sidebar' )) && (in_array('newsflash', $terms))) {
+                 dynamic_sidebar( 'tag_cloud_sidebar' );            
+                }
+            ?>
 
-                if (( is_active_sidebar( 'tag_cloud_sidebar' ) )&& (in_array('newsflash', $terms))): ?>
-                <aside id="tagcloud-sidebar" class="widget-area" role="complementary">
-                    <?php dynamic_sidebar( 'tag_cloud_sidebar' ); ?>
-                </aside><!-- #primary-sidebar -->
-                <?php endif; ?>
-                <?php 
-                get_sidebar();
-                ?>
-            </aside>
+            <?php
+            if (!in_array('newsflash', $terms)) {
+            sedoo_wpthch_geotraces_postlist_by_term('Latest posts', $terms, 'grid-noimage', '4', '0', "More posts", "1");
+            }
+            ?>  
+            <?php 
+            get_sidebar();
+            ?>
+            </aside><!-- #primary-sidebar -->
         </div>
         
         <?php //get_template_part('template-parts/nav-box'); ?>

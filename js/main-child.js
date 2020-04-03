@@ -70,40 +70,7 @@ jQuery(document).ready(function ($) {
     $(".bobinette").click(function () {
         $("#stickyMenu").toggleClass("open");
     });
-    // reading time
-    $(function() {
-
-        $('article').each(function() {
-
-            let _this = $(this);
-
-            _this.readingTime({
-                readingTimeTarget: '.eta',
-                remoteTarget: 'article',
-                success: function(data) {
-                }
-            });
-        });
-    });
     
-    // Permettre au slider menu de fonctionner avec le scroll
-//    const slider = $("#burger-menu");
-//
-//    slider.on('wheel', (function(e) {
-//      e.preventDefault();
-//
-//      if (e.originalEvent.deltaY < 0) {
-//        $(this).slick('slickNext');
-//      } else {
-//        $(this).slick('slickPrev');
-//      }
-//    }));
-    
-//    var slideCount = jQuery("#burger-menu").length;
-//    if (slideCount <= 1.7) {
-//      // clone element
-//      jQuery("#burger-menu.slider").children().clone(true, true).appendTo("#burger-menu.slider");
-//    }
     // Initialisation du carousel pour le menu
     if (window.matchMedia("(min-width: 767px)").matches) {
 //        $('#burger-menu').slick({

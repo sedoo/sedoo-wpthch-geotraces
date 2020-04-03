@@ -84,14 +84,14 @@ $code_color=labs_by_sedoo_main_color();
                     <?php if(get_field('lien_intranet', 'option')){ ?>
                     <li>
                         <a href="<?php echo wp_login_url(); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() . '/image/key.svg'; ?>" width="60px" alt="" /><?php echo __("Login", 'sedoo-wpth-labs'); ?>
+                            <img src="<?php echo get_template_directory_uri() . '/images/key.svg'; ?>" width="60px" alt="" /><?php echo __("Login", 'sedoo-wpth-labs'); ?>
                         </a>
                     </li>
                     <?php } ?>
                     <?php if(get_field('lien_webmail', 'option')){ ?>
                     <li>
                         <a href="<?php the_field('lien_webmail', 'option'); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri() . '/image/mail.svg'; ?>" alt="" /><?php echo __("Webmail", 'sedoo-wpth-labs'); ?>
+                            <img src="<?php echo get_template_directory_uri() . '/images/mail.svg'; ?>" alt="" /><?php echo __("Webmail", 'sedoo-wpth-labs'); ?>
                         </a>
                     </li>
                     <?php } ?>                        
