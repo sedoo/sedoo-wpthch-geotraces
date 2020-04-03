@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.8.3
+Version:      0.8.4
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -36,25 +36,10 @@ div[id="page"] {
     display: none;
 }
 
-h1, .h1,
-.single-post main article header h1, 
-.single-event main article header h1 {
-    font-size: 3rem;
-}
-
 .home header[id="cover"] .wrapper h1, .home header[id="cover"] .wrapper-content h1, .home header[id="cover"] .archive .site-content .site-branding h1, .archive .site-content .home header[id="cover"] .site-branding h1,
 .home header[id="cover"] .wrapper h2, .home header[id="cover"] .wrapper-content h2, .home header[id="cover"] .archive .site-content .site-branding h2, .archive .site-content .home header[id="cover"] .site-branding h2
 {
     text-shadow: 1px 1px 2px rgba(0,0,0,.5);
-}
-
-
-h2, .h2 {
-    font-size: 2.5rem;
-}
-
-p {
-    text-align: justify;
 }
 
 figure {
@@ -90,9 +75,9 @@ th, td {
     border-right:1px solid #ccc
 }
 
-blockquote {
+/* blockquote {
     font-size: 3.1rem;
-}
+} */
 
 #content {
     overflow: hidden;
@@ -172,8 +157,6 @@ header[id="masthead"] .wrapper .nav-container {
 
 [id="ul-top-header"] {
     display: flex;
-    font-family: arial, sans-serif;
-    font-size:1.5rem;
 }
 [id="ul-top-header"] li {
     margin-right:20px;
@@ -211,10 +194,6 @@ header[id="masthead"] .wrapper .nav-container {
 .home #primary > aside,
 #content-area.newsflash > .wrapper-layout-newsflash > aside {
     flex:1 1 300px;
-}
-
-.home h2 {
-    font-size:3.5rem;
 }
 
 #content-area.newsflash > .wrapper-layout-newsflash a.tag-cloud-link:hover {
@@ -309,12 +288,6 @@ header[id="masthead"] .wrapper .nav-container {
 #content-area .posts-navigation a {
     color:#FFF;
 }
-.single-post main article section p:first-child::first-letter, .single-event main article section p:first-child::first-letter {
-	float:none;
-	font-size:1.5rem;
-	font-family:inherit;
-	padding:0
-}
 
 .content-list .post:nth-child(4n) {
     display:block;
@@ -326,32 +299,6 @@ header[id="masthead"] .wrapper .nav-container {
 }
 .post-wrapper .post .entry-header > figure {
     margin:0;
-}
-.content-list h2 {
-    font-family: "Montserrat", sans-serif;
-    font-size:2rem;
-    margin-top:10px;
-}
-
-.content-list .post .entry-content {
-    margin-bottom:0;
-}
-
-.content-list article:first-child {
-    border-top:1px solid #CCC;
-}
-
-.content-list article {
-    border-bottom:1px solid #CCC;
-    box-shadow:none;
-}
-
-.content-list .date {
-    font-weight: bold;
-}
-
-.post .group-content .entry-content {
-    margin-bottom: 50px;
 }
 
 /****************   SINGLE   ***************/
@@ -376,14 +323,14 @@ header[id="masthead"] .wrapper .nav-container {
     margin-bottom:30px;
 }
 
-.single main + aside h2,
+/* .single main + aside h2,
 .category-newsflash main + aside h2{
     font-family: "Montserrat", sans-serif;
-}
+} */
 
 a.tag-cloud-link,
 span.tag-cloud-link {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     display: inline-block;
     margin-bottom: 5px;
     padding: 3px 10px 5px;
@@ -533,12 +480,6 @@ footer[id="colophon"] > div.wrapper-layout > :last-child {
 .footer-menu.widget-area * {
     color:#FFF;
 }
-
-.footer-menu.widget-area ul.menu > li {
-    font-weight: bold;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-} 
 
 .footer-menu.widget-area a {
     text-decoration: none;
