@@ -58,7 +58,7 @@ acf_add_local_field_group(array(
 			),
 			'choices' => array(
 				'ssc' => 'SSC',
-				'pastssc' => 'Past SSC',
+				'past' => 'Past SSC',
 				'officers' => 'Officers',
 			),
 			'allow_custom' => 0,
@@ -173,7 +173,7 @@ acf_add_local_field_group(array(
 			'choices' => array(
 				'all' => 'All',
 				'ssc' => 'SSC members',
-				'pastssc' => 'Past SSC members',
+				'past' => 'Past SSC members',
 				'officers' => 'Officers',
 			),
 			'allow_custom' => 0,
