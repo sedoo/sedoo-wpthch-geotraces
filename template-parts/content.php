@@ -14,12 +14,7 @@ if (has_post_thumbnail() || (labs_by_sedoo_catch_that_image() !==  "no_image") )
     if (has_post_thumbnail()) {
         $postThumbnail .= get_the_post_thumbnail($post->ID, 'thumbnail-loop');
     } else {
-        if (labs_by_sedoo_catch_that_image() !==  "no_image" ){
-            $postThumbnail .= "<img src=\"".labs_by_sedoo_catch_that_image()."\" alt=\"\" />"; 
-            // echo '<img src="';
-            // echo labs_by_sedoo_catch_that_image();
-            // echo '" alt="" />'; 
-        } 
+        labs_by_sedoo_catch_that_image();
     }
     $postThumbnail .= "</figure>";
 }
