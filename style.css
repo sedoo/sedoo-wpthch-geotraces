@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, sedoo
 Template:     sedoo-wpth-labs
-Version:      0.8.8
+Version:      1.0.0
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -48,13 +48,13 @@ figure {
 }
 
 figcaption {     
-    font-size: 1.25rem; 
+    font-size:0.75rem; 
     letter-spacing:1px;
 }
 
 table {
     border:1px solid #ccc;
-    font-size:1.4rem;
+    font-size:0.875rem;
 }
 
 table tr {
@@ -70,10 +70,6 @@ th, td {
     padding:3px 3px;
     border-right:1px solid #ccc
 }
-
-/* blockquote {
-    font-size: 3.1rem;
-} */
 
 #content {
     overflow: hidden;
@@ -170,7 +166,7 @@ header[id="masthead"] .wrapper .nav-container {
 /**** NAV   ***/
 @media (max-width:1140px) {
     ul[id="primary-menu"] .menu-item .sub-menu .menu-item a {
-        font-size: 1.6rem;
+        font-size:1rem;
     }
 }
 /*** HOMEPAGE **/
@@ -380,7 +376,7 @@ ol.tribe-list-widget li {
 }
 
 ol.tribe-list-widget h4 {
-    font-size: 1.6rem;
+    font-size:1rem;
     font-weight: normal;
     margin-bottom:0;
 }
@@ -483,7 +479,7 @@ footer[id="colophon"] > div.wrapper-layout > :last-child {
 
 .footer-menu.widget-area ul.menu > li li {
     margin:10px 0;
-    font-size: 1.5rem;
+    font-size:0.9375rem;
     font-weight: normal;
 }
 
@@ -495,7 +491,7 @@ footer[id="colophon"] > div.wrapper-layout > :last-child {
 
 footer .intranet li a{
     display: block;
-    font-size: 1.8rem;
+    font-size:1.125rem;
     padding:3px 10px;
 }
 
@@ -562,7 +558,7 @@ footer .intranet li a:hover img {
     border-bottom: 1px solid #CCC;
     font-family: arial;
     letter-spacing: 1px;
-    font-size: 1.4rem;
+    font-size:0.875rem;
     position: relative;
 }
 
@@ -574,7 +570,7 @@ footer .intranet li a:hover img {
     position:absolute;
     left:-30px;
     top:0;
-    font-size: 3rem;
+    font-size:1.875rem;
 }
 
 [data-role="listSscMembers"] > article > header {
@@ -597,7 +593,7 @@ footer .intranet li a:hover img {
     line-height: 25px;
     background: var(--main-color);
     color:#FFF;
-    font-size: 2.3rem;
+    font-size:1.4375rem;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -645,7 +641,7 @@ div.sedoo-button-block-group.homepageButton  a.sedoo-button-block {
     border: none;
     background: transparent;
     word-break: break-word;
-    font-size: 1.5rem;
+    font-size:0.9375rem;
 }
 
 
