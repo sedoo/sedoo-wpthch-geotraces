@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, Nicolas Gruwe, sedoo
 Template:     sedoo-wpth-labs
-Version:      1.0.1
+Version:      1.0.2
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -304,7 +304,7 @@ header[id="masthead"] .wrapper .nav-container {
 
 .single main + aside {
     flex:1 0 320px;
-    padding:100px 0 30px 20px;
+    padding: 130px 0 30px 20px;
 }
 
 .single-post main > article > header div > p {
