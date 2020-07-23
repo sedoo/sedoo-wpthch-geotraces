@@ -89,7 +89,6 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit,
         'post_status'      => 'publish',
         'suppress_filters' => true 
     );
-
     if ($term !== "all") {
         $argsListPost['tax_query'] = array(
                         array(
@@ -98,9 +97,13 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit,
                             "terms"    => $term,
                         )
                         );
-        $url = get_term_link($term, 'category');
+            if(is_wp_error(get_term_link($term, 'category'))) {
+                $url = 'nourl';
+            } else {
+                $url = get_term_link($term, 'category');
+            }
         } else {
-        $url = get_permalink( get_option( 'page_for_posts' ) );
+        $url = get_permalink( get_option( 'page_for_posts' ) );       
         }
 
     switch ($layout) {
@@ -135,7 +138,8 @@ function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit,
         endforeach;
         ?>	
     </section>
-    <?php if ($button == 1) { ?>    
+    <?php 
+    if ($button == 1 && $url != 'nourl') { ?>   
     <a href="<?php echo $url; ?>" class="btn"><?php echo $buttonLabel; ?></a>
     <?php
         }

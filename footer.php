@@ -15,25 +15,56 @@ $code_color=labs_by_sedoo_main_color();
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" style="background:<?php echo $code_color?>;">
+    <style>
+        footer[id="colophon"] * {
+            color:
+            <?php
+            if (get_field('footer_text_color', 'option')) {
+                the_field('footer_text_color', 'option');            
+            } else {
+                echo "#222";
+            }
+            ?>
+            ;
+        }
+        </style>    
         <div class="wrapper-layout">
-            <div>
-                <?php if ( is_active_sidebar( 'footer_menu_1' ) ) : ?>
-                <div class="footer-menu widget-area" id="footer_menu_1" role="complementary">
-                    <?php dynamic_sidebar( 'footer_menu_1' ); ?>
-                </div>
-                <?php endif; ?>
+        <div><!--footer menus-->
+                <?php if (has_nav_menu('footer-menu-1')) { 
+                ?>
+                <nav class="footer-menu" id="footer-menu-1">
+                <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'footer-menu-1',
+                    ) );
+                ?>
+                </nav>
+                <?php
+                } ?>
 
-                <?php if ( is_active_sidebar( 'footer_menu_2' ) ) : ?>
-                <div class="footer-menu widget-area" id="footer_menu_2" role="complementary">
-                    <?php dynamic_sidebar( 'footer_menu_2' ); ?>
-                </div>
-                <?php endif; ?>
-
-                <?php if ( is_active_sidebar( 'footer_menu_3' ) ) : ?>
-                <div class="footer-menu widget-area" id="footer_menu_3" role="complementary">
-                    <?php dynamic_sidebar( 'footer_menu_3' ); ?>
-                </div>
-                <?php endif; ?>
+                <?php if (has_nav_menu('footer-menu-2')) { 
+                ?>
+                <nav class="footer-menu" id="footer-menu-2">
+                <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'footer-menu-2',
+                    ) );
+                ?>
+                </nav>
+                <?php
+                } ?>
+                
+                <?php if (has_nav_menu('footer-menu-3')) { 
+                ?>
+                <nav class="footer-menu" id="footer-menu-3">
+                <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'footer-menu-3',
+                    ) );
+                ?>
+                </nav>
+                <?php
+                } ?>
             </div>
             
             <div class="social-partenaires">

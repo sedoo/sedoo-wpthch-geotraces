@@ -124,7 +124,8 @@ $themeSlugRewrite = "category";
             </main><!-- #main -->
 
             <aside id="tagcloud-sidebar" class="widget-area" role="complementary">
-            <?php if (( is_active_sidebar( 'tag_cloud_sidebar' )) && (in_array('newsflash', $terms))) {
+            <?php 
+            if (( is_active_sidebar( 'tag_cloud_sidebar' )) && (in_array('newsflash', $terms))) {
                  dynamic_sidebar( 'tag_cloud_sidebar' );            
                 }
             ?>
