@@ -33,17 +33,11 @@ $themeSlugRewrite = "category";
         ?>
             <header id="cover">
                 <?php the_post_thumbnail('cover'); ?>
-            </header>
-        <?php 
-        } else {
-            $headerBorder="";
-            ?>
-            <header id="cover" style="border-top:5px solid <?php echo $code_color;?>;height:auto;">
-            </header>
+            </header>        
         <?php
         }
         ?>
-        <div class="wrapper-layout" <?php if (isset($headerBorder)) {echo "style=\"padding-top:140px\"";}?>>
+        <div class="wrapper-layout">
             <main id="main" class="site-main">
                 <article id="post-<?php the_ID();?>">	
                     <header>
