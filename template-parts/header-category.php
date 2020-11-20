@@ -2,14 +2,14 @@
 
 // $cover = get_field( 'tax_image', $term);
 
-if ( $cover ) {
-    $coverStyle = "background-image:url(".$cover.")";
-} else {
-    $coverStyle = "border-top:5px solid #309fb3;height:auto;";
-}
+// if ( $cover ) {
+//     $coverStyle = "background-image:url(".$cover.")";
+// } else {
+//     $coverStyle = "border-top:5px solid #309fb3;height:auto;";
+// }
 ?>
 
-<header id="cover" class="page-header" style="<?php echo $coverStyle;?>">
+<header id="cover" class="page-header">
 				
 </header><!-- .page-header -->
 <h1 class="page-title">
