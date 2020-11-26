@@ -5,11 +5,6 @@ function theme_enqueue_styles() {
 
 }
 
-/**
- * REGISTER NAV MENU AREAS
- */
-register_nav_menus(array('top-header' => 'Top header navigation'));
-
  /**
   * REGISTER WIDGET AREAS
   */
