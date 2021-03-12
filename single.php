@@ -126,7 +126,7 @@ $themeSlugRewrite = "category";
 
             <?php
             if (!in_array('newsflash', $terms)) {
-            sedoo_wpthch_geotraces_postlist_by_term('Latest posts', $terms, 'grid-noimage', '4', '0', "More posts", "1");
+            sedoo_wpthch_geotraces_postlist_by_term('Latest posts', $terms, 'grid-noimage', '3', '0', "More posts", "1");
             }
             ?>  
             <?php 
