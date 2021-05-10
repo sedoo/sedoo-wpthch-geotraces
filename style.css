@@ -4,13 +4,13 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, Nicolas Gruwe, sedoo
 Template:     sedoo-wpth-labs
-Version:      1.3.0
+Version:      1.3.1
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
 Domain Path: /languages
 Tags: 
-GitHub Theme URI: sedoo/sedoo-wpthch-geotraces
+GitHub Theme URI: sedoo/sedoo-wpthch-geotraces1.4
 GitHub Branch: master
 */
 
@@ -39,7 +39,7 @@ OVERRIDE CSS
 }
 
 figure {
-    max-width:100% !important;
+    max-width:100%;
     margin:40px auto;
 }
 
