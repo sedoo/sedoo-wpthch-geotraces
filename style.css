@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, Nicolas Gruwe, sedoo
 Template:     sedoo-wpth-labs
-Version:      1.3.2
+Version:      1.4.0
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -23,8 +23,6 @@ OVERRIDE CSS
     --main-color:#309fb3;
 }
 
-.home header[id="cover"]::before, 
-.home header[id="cover"]::after,
 .single-post main::before, 
 .single-post main::after, 
 .single-event main::before, 
@@ -36,6 +34,18 @@ OVERRIDE CSS
 .home header[id="cover"] .wrapper h2, .home header[id="cover"] .wrapper-content h2, .home header[id="cover"] .archive .site-content .site-branding h2, .archive .site-content .home header[id="cover"] .site-branding h2
 {
     text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+}
+
+/* UN Decade of Ocean Science logo */
+.home header[id="cover"]::after {
+    content: "";
+    width: 350px;
+    height: 100px;
+    background: url(https://www.geotraces.org/wp-content-omp/uploads/sites/31/2021/07/ENGLISH_COLOUR_BLUE_WHITE.svg) no-repeat;
+    display: block;
+    position: absolute;
+		bottom: -35px;
+    left: 10px;
 }
 
 figure {
@@ -220,52 +230,6 @@ header[id="masthead"] .wrapper .nav-container {
     border-top: 4px solid var(--main-color);
 }
 
-/* .post .entry-header, .post-horizontal .entry-header {
-    min-height: 50px;
-    max-height: 235px;
-    height: auto;
-
-} */
-/* 
-.post:nth-child(8n) .entry-header p {
-    left: -10px;
-    right: inherit;
-}
-
-.post-wrapper .post:nth-child(4n),
-.content-list .post:nth-child(4n) {
-    height: auto;
-    flex-flow: row wrap;
-    align-content: flex-start;
-}
-
-.post-wrapper .post:nth-child(4n)::before,
-.content-list .post:nth-child(4n)::before {
-    display: none;
-} */
-/* 
-.post-wrapper .post:nth-child(4n) .entry-header,
-.content-list .post:nth-child(4n) .entry-header {
-    width:100%;
-    margin-right: 0;
-    margin-left:0;
-    margin-bottom:20px;
-} */
-
-/* .post-wrapper .post:nth-child(4n) .entry-header,
-.post-wrapper .post:nth-child(4n) .group-content,
-.post-wrapper .post:nth-child(8n) .group-content,
-.content-list .post:nth-child(4n) .group-content,
-.content-list .post:nth-child(8n) .group-content {
-    width: 100%;
-    position: relative;
-} */
-/* 
-.post:nth-child(8n) .entry-content > h2,
-.post:nth-child(8n) .entry-content > p{
-    text-align: left;
-} */
-
 .posts-navigation {
     width:100%;
 }
@@ -314,19 +278,13 @@ header[id="masthead"] .wrapper .nav-container {
     margin-bottom:30px;
 }
 
-/* .single main + aside h2,
-.category-newsflash main + aside h2{
-    font-family: "Montserrat", sans-serif;
-} */
-
 a.tag-cloud-link,
 span.tag-cloud-link {
-    /* font-family: Arial, Helvetica, sans-serif; */
     display: inline-block;
     margin-bottom: 5px;
     padding: 3px 10px 5px;
     color:#333;
-    border: 1px solid #ddd; /*var(--main-color);*/
+    border: 1px solid #ddd;
     border-radius: 5px;
     text-decoration: none;
     background:#F0F0F0;
@@ -434,11 +392,6 @@ ol.tribe-list-widget h4 {
 }
 
 /**********************************     FOOTER      ****************************************************************************      FOOTER     *******************/
-
-footer[id="colophon"] {
-/*    background-color: var(--second-color);*/
-
-}
 
 footer[id="colophon"] > div,
 footer[id="colophon"] > div > :first-child {
@@ -689,8 +642,6 @@ div.sedoo-button-block-group.homepageButton a.sedoo-button-block:hover > span {
     color:#FFF;
 }
 
-
-
 .geotraces_search_result .entry-header{
     height: auto !important;
 }
@@ -703,3 +654,301 @@ div.sedoo-button-block-group.homepageButton a.sedoo-button-block:hover > span {
     margin-bottom: 40px;
 }
 
+/**  CSS ADDITIONNELS... 
+* Ajoutés depuis le customizer wordpress, mais devenus permanents...
+**/
+.home header[id="cover"] .wrapper h1 {
+	font-size:3.75rem;
+}
+
+
+input {
+	padding:5px;
+}
+
+.overlay {
+	top:-300px;
+}
+
+.overlay.open {
+    height: 100%;
+    z-index: 500;
+    top: 0;
+}
+
+.rang-form {
+	display:flex;
+	justify-content:space-between;
+}
+.demi-colonne {
+	flex:0 1 320px;
+}
+
+#desc_overlay {
+    background-color:rgba(255,255,255,.9);
+}
+#desc_overlay h2 {
+	color:#000;
+}
+
+#cruiseProg {
+	margin-top:20px;
+	overflow:hidden;
+}
+.cruiseProg {
+	margin-top:20px;
+	overflow:hidden;
+}
+
+#cruiseProg iframe {
+	margin-top: -150px;
+}
+.cruiseProg iframe {
+	margin-top: -180px;
+}
+
+.post-wrapper .post.category-newsflash,
+.newsflash header#cover{
+	border-top-color:#B399C5 !important;
+}
+
+#tribe-events-content a, .tribe-events-event-meta a {
+	color:#309fb3;
+}
+
+.intranet img[src$="key.svg"] {
+	width:30px !important;
+}
+
+.footer-menu.widget-area * {
+	color:#222;
+}
+
+footer .intranet li a {
+	font-size:0.9375rem;
+}
+
+footer .social-partenaires {
+	display:flex;
+	width:500px;
+	justify-content:space-between;
+}
+footer .social-partenaires .partners-list {
+	padding-top:50px;
+}
+footer .social-partenaires .partners-list h2{
+	display:none;
+}
+footer .social-partenaires .partners-list img {
+	transform:scale(2.3)
+}
+
+.social-list li a::after {
+    filter: invert(0);
+}
+
+.wp-block-separator{
+	width: 10%;
+	border: 0;
+	border-top: 2px solid #000;
+	box-shadow: none;	
+	margin-bottom:100px;
+	margin-top: 50px;
+}
+
+header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding .site-branding, .archive header[id="masthead"] .site-branding .site-branding {
+    max-width: 250px;
+}
+
+div.sedoo-button-block-group.homepageButton a.sedoo-button-block {
+		width: 170px;
+}
+
+div.sedoo-button-block-group a.sedoo-button-block{
+	flex-direction: column;
+	padding: 10px!important;
+}
+
+
+div.sedoo-button-block-group a.sedoo-button-block{
+	background: transparent;
+
+}
+
+div.sedoo-button-block-group a.sedoo-button-block span{
+	color: #309fb3;
+	text-align:center;
+}
+
+div.sedoo-button-block-group a.sedoo-button-block:hover{
+	background: #309fb3;
+}
+
+div.sedoo-button-block-group a.sedoo-button-block:hover span{
+	color: #FFF;
+}
+
+div.sedoo-button-block-group a.sedoo-button-block > svg{
+	width: 40px;
+	height: 40px;
+	margin-bottom: 10px!important;
+}
+
+ div.sedoo-button-block-group a.sedoo-button-block > svg * { stroke: #309fb3; } 
+
+
+
+div.sedoo-button-block-group a.sedoo-button-block:hover > svg *{
+	stroke: #FFF;
+}
+
+div.sedoo-button-block-group.homepageButton a.sedoo-button-block > svg{
+	transform: scale(1);
+}
+
+div.sedoo-button-block-group.homepageButton a.sedoo-button-block > svg *{
+	stroke: none;
+}
+
+div.sedoo-button-block-group.jobsButtons   a.sedoo-button-block > svg{
+	transform: scale(1.3);
+}
+
+div.sedoo-button-block-group a.sedoo-button-block span {
+	text-transform:none;
+}
+
+.home #primary {
+	padding:30px 0;
+}
+
+
+
+footer#colophon {
+	background:#E0E0E0 !important;
+}
+
+footer#colophon .social-partenaires {
+	display:none;
+}
+
+/*** CONTACT FORM. ***/
+span.wpcf7-list-item {
+	display:block;
+}
+
+/*** NEWSLETTER. **/
+.tnp-subscription {
+	margin-left:0;
+}
+
+/*** FOOTER MENU. ***/
+.search-form h2 {display:none;}
+
+/*** NEWSLETTER CORRECTIONS ***/
+#primary.newsletter #main article td{
+	vertical-align:top;
+}
+
+#primary.newsletter #main article table, 
+#primary.newsletter #main article td, 
+#primary.newsletter #main article th, 
+#primary.newsletter #main article tr {
+    border: none !important;
+}
+
+article.category-newsletter .entry-content p:not(.date) {
+	display:none;
+}
+
+
+footer .intranet li a {
+	margin-top:5px;
+}
+footer .intranet li a img {
+height: 40px;
+vertical-align: middle;
+margin-right: 10px;
+}
+
+.sedoo_iframe.hidded_top_banner {
+	margin-top: 100px;
+  overflow: hidden;
+}
+.sedoo_iframe.hidded_top_banner iframe {
+	margin-top: -165px;
+}
+
+.page-id-9173 .wpcf7 label {
+	font-weight:bold;
+}
+.page-id-9173 .wpcf7 input {
+	background: #E0E0E0;
+	height:25px;
+   padding: 10px;
+  display: block;
+  border: 1px;
+}
+
+.page-id-9173 .wpcf7 .wpcf7-submit {
+	height:45px;
+	width:100px;
+}
+
+
+.geotraces_search_result .entry-header{
+    height: auto !important;
+}
+.geotraces_search_result article {
+    box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+    width: 100%;
+    padding: 20px;
+	background:white !important;
+    margin-bottom: 40px;
+}
+
+
+@media screen and (max-width: 1280px) {
+ .home header[id="cover"] .wrapper h1,
+ .home header[id="cover"] .wrapper-content h1,
+ .home header[id="cover"] .archive .site-content .site-branding h1,
+ .archive .site-content .home header[id="cover"] .site-branding h1 {
+  font-size:2.5rem;
+ }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+		.home header[id="cover"] .wrapper h1,
+ .home header[id="cover"] .wrapper-content h1,
+ .home header[id="cover"] .archive .site-content .site-branding h1,
+ .archive .site-content .home header[id="cover"] .site-branding h1 {
+  font-size:2.1875rem;
+ }
+	.home header[id="cover"] .wrapper h2, .home header[id="cover"] .wrapper-content h2, .home header[id="cover"] .archive .site-content .site-branding h2, .archive .site-content .home header[id="cover"] .site-branding h2 {
+    font-size: 1.25rem;
+ }
+}
+
+@media (min-width:1223px){
+	header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding .site-branding, .archive header[id="masthead"] .site-branding .site-branding {
+		max-width:300px;
+	}
+}
+
+@media (min-width:1290px){
+	header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding .site-branding, .archive header[id="masthead"] .site-branding .site-branding {
+		max-width:340px;
+	}
+}
+
+
+/* fix for google issue with right column on single */
+@media screen and (min-width: 1024px) {
+
+.single main + aside .post-wrapper .post {
+  width: 100%;
+  margin: 10px 0px; }
+
+.single main + aside {
+  min-width: 100px; 
+flex:0 1 320px;}
+}
