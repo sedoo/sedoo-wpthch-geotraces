@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, Nicolas Gruwe, sedoo
 Template:     sedoo-wpth-labs
-Version:      1.4.0
+Version:      1.4.1
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -107,8 +107,8 @@ th, td {
     color:#000;
 }
 
-header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding .site-branding, .archive header[id="masthead"] .site-branding .site-branding {
-    max-width: 230px;
+header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, .archive header[id="masthead"] .site-branding {
+    max-width: 250px;
 }
 
 /*** UTILZ  ***/
@@ -299,9 +299,9 @@ span.tag-cloud-link {
 }
 
 /************ EVENTS *************/
-.type-tribe_events {
+/* .type-tribe_events {
 font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 .tribe-events-loop .author.location {
     display: flex;
@@ -391,99 +391,7 @@ ol.tribe-list-widget h4 {
     background: url("image/logo_instagram.svg") no-repeat;
 }
 
-/**********************************     FOOTER      ****************************************************************************      FOOTER     *******************/
-
-footer[id="colophon"] > div,
-footer[id="colophon"] > div > :first-child {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-footer[id="colophon"] > div.wrapper-layout   > :first-child {
-    flex: 0 1 900px;
-}
-
-footer[id="colophon"] > div.wrapper-layout > :last-child {
-    flex: 0 1 200px;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-}
-
-/*** FOOTER MENU ***/
-.footer-menu.widget-area {
-    flex:0 0 250px;
-}
-
-.footer-menu.widget-area  ul{ 
-    list-style: none;
-    padding:0;
-}
-
-.footer-menu.widget-area * {
-    color:#FFF;
-}
-
-.footer-menu.widget-area a {
-    text-decoration: none;
-}
-
-.footer-menu.widget-area ul.menu > li li {
-    margin:10px 0;
-    font-size:0.9375rem;
-    font-weight: normal;
-}
-
-/*** INTRANET FOOTER LINK ***/
-
-.copyright .wrapper.site-info {
-    padding:0 0 20px;
-}
-
-footer .intranet li a{
-    display: block;
-    font-size:0.9375rem;
-    padding:3px 10px;
-}
-
-footer .intranet li a:hover img {
-    filter: invert(100%);
-}
-
-.intranet img[src$="key.svg"] {
-    width: 30px;
-}
-
-.copyright .wrapper.site-info .intranet {
-    margin-top:0;
-}
-
-
-
-/*** PARTNER LIST ***/
-.partners-list {
-    background:#FFF;
-}
-.partners-list ul{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.partners-list .wrapper-layout {
-    padding:0 20px 70px;
-}
-
-.partners-list .wrapper-layout a:hover {
-    background:none;
-}
-
-/**** OVERLAY LAYOUT ***/
-.overlay.search-form:not(.open) .close {
-    display:none;
-}
+/**********************************     FOOTER      **************************************************************************** /
 
 /**** 404 ***/
 
@@ -494,10 +402,6 @@ footer .intranet li a:hover img {
 .error404 .search-form .search-field {
     background: #EEE;
     width: 30%;
-}
-
- .search-form .search-submit {
-    
 }
 
 .error404 .search-form .search-field,
@@ -712,10 +616,6 @@ input {
 	border-top-color:#B399C5 !important;
 }
 
-#tribe-events-content a, .tribe-events-event-meta a {
-	color:#309fb3;
-}
-
 .intranet img[src$="key.svg"] {
 	width:30px !important;
 }
@@ -756,12 +656,8 @@ footer .social-partenaires .partners-list img {
 	margin-top: 50px;
 }
 
-header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding .site-branding, .archive header[id="masthead"] .site-branding .site-branding {
-    max-width: 250px;
-}
-
 div.sedoo-button-block-group.homepageButton a.sedoo-button-block {
-		width: 170px;
+	width: 170px;
 }
 
 div.sedoo-button-block-group a.sedoo-button-block{
@@ -822,16 +718,6 @@ div.sedoo-button-block-group a.sedoo-button-block span {
 	padding:30px 0;
 }
 
-
-
-footer#colophon {
-	background:#E0E0E0 !important;
-}
-
-footer#colophon .social-partenaires {
-	display:none;
-}
-
 /*** CONTACT FORM. ***/
 span.wpcf7-list-item {
 	display:block;
@@ -859,16 +745,6 @@ span.wpcf7-list-item {
 
 article.category-newsletter .entry-content p:not(.date) {
 	display:none;
-}
-
-
-footer .intranet li a {
-	margin-top:5px;
-}
-footer .intranet li a img {
-height: 40px;
-vertical-align: middle;
-margin-right: 10px;
 }
 
 .sedoo_iframe.hidded_top_banner {
@@ -929,13 +805,13 @@ margin-right: 10px;
 }
 
 @media (min-width:1223px){
-	header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding .site-branding, .archive header[id="masthead"] .site-branding .site-branding {
+	header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding, .archive header[id="masthead"] .site-branding {
 		max-width:300px;
 	}
 }
 
 @media (min-width:1290px){
-	header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding .site-branding, .archive header[id="masthead"] .site-branding .site-branding {
+	header[id="masthead"] .wrapper .site-branding, header[id="masthead"] .wrapper-content .site-branding, header[id="masthead"] .archive .site-branding, .archive header[id="masthead"] .site-branding {
 		max-width:340px;
 	}
 }
