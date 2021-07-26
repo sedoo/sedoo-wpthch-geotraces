@@ -10,24 +10,6 @@ function theme_enqueue_styles() {
   */
 function sedoo_wpthch_geotraces_widgets_init() {
 
-    register_sidebar( array(
-		'name'          => 'Home top area',
-		'id'            => 'home_top_area',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-    ) );
-
-	register_sidebar( array(
-		'name'          => 'Home right sidebar',
-		'id'            => 'home_right_1',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-    ) );
-
     register_sidebar(array(
 		'name'          => 'Tag cloud side bar',
 		'id'            => 'tag_cloud_sidebar',
@@ -36,33 +18,6 @@ function sedoo_wpthch_geotraces_widgets_init() {
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
     ) );
-
-    register_sidebar( array(
-		'name'          => 'Footer menu 1',
-		'id'            => 'footer_menu_1',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-    ) );
-    
-    register_sidebar( array(
-		'name'          => 'Footer menu 2',
-		'id'            => 'footer_menu_2',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-    ) );
-    
-    register_sidebar( array(
-		'name'          => 'Footer menu 3',
-		'id'            => 'footer_menu_3',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-	) );
 
 }
 add_action( 'widgets_init', 'sedoo_wpthch_geotraces_widgets_init' );
