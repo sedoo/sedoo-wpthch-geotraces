@@ -23,11 +23,9 @@ while ( have_posts() ) : the_post();
 
 $themes = get_the_terms( $post->ID, 'category');  
 $themeSlugRewrite = "category";
-// foreach ($terms as $term) {
-// echo $term;
-// }
+
 ?>
-	<div id="primary" class="content-area <?php echo esc_html( $categories[0]->slug );?>">
+	<div id="primary" class="content-area <?php if($categories[0]->slug !== "publicity") {echo esc_html( $categories[0]->slug );}?>">
         <?php
             if ( has_post_thumbnail() ) {
         ?>
@@ -119,8 +117,19 @@ $themeSlugRewrite = "category";
 
             <aside id="tagcloud-sidebar" class="widget-area" role="complementary">
             <?php 
-            if (( is_active_sidebar( 'tag_cloud_sidebar' )) && (in_array('newsflash', $terms))) {
-                 dynamic_sidebar( 'tag_cloud_sidebar' );            
+            if (in_array('newsflash', $terms)) {
+                ?>
+                <h2>Filter by keyword</h2>
+                <?php
+                wp_tag_cloud( array(
+                	'smallest' => 12, // size of least used tag
+					'largest'  => 25, // size of most used tag
+					'unit'     => 'px', // unit for sizing the tags
+					'number'   => 0, // displays at most 45 tags
+					'orderby'  => 'name', // order tags alphabetically
+					'order'    => 'ASC', // order tags by ascending order
+					'taxonomy' => 'post_tag' // you can even make tags for custom taxonomies
+				 ) );         
                 }
             ?>
 
@@ -130,7 +139,7 @@ $themeSlugRewrite = "category";
             }
             ?>  
             <?php 
-            get_sidebar();
+            //get_sidebar();
             ?>
             </aside><!-- #primary-sidebar -->
         </div>

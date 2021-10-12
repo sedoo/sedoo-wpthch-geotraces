@@ -51,11 +51,21 @@ $cover = get_field( 'tax_image', $term);
 			?>			
 
 			</main><!-- #main -->
-			<?php if ( is_active_sidebar( 'tag_cloud_sidebar' ) ) : ?>
-				<aside id="tagcloud-sidebar" class="widget-area" role="complementary">
-					<?php dynamic_sidebar( 'tag_cloud_sidebar' ); ?>
-				</aside><!-- #primary-sidebar -->
-			<?php endif; ?>
+			<aside id="tagcloud-sidebar" class="widget-area" role="complementary">
+                <h2>Filter by keyword</h2>
+				<?php //dynamic_sidebar( 'tag_cloud_sidebar' ); 
+				wp_tag_cloud( array(
+					'smallest' => 12, // size of least used tag
+					'largest'  => 25, // size of most used tag
+					'unit'     => 'px', // unit for sizing the tags
+					'number'   => 0, // displays at most 45 tags
+					'orderby'  => 'name', // order tags alphabetically
+					'order'    => 'ASC', // order tags by ascending order
+					'taxonomy' => 'post_tag' // you can even make tags for custom taxonomies
+				 ) );
+				?>
+
+			</aside><!-- #primary-sidebar -->
 		</div>
 	</div><!-- #primary -->
 
