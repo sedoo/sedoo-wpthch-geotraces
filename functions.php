@@ -5,24 +5,6 @@ function theme_enqueue_styles() {
 
 }
 
- /**
-  * REGISTER WIDGET AREAS
-  */
-function sedoo_wpthch_geotraces_widgets_init() {
-
-    register_sidebar(array(
-		'name'          => 'Tag cloud side bar',
-		'id'            => 'tag_cloud_sidebar',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-    ) );
-
-}
-add_action( 'widgets_init', 'sedoo_wpthch_geotraces_widgets_init' );
-
-
 function sedoo_wpthch_geotraces_postlist_by_term($title, $term, $layout, $limit, $offset, $buttonLabel, $button) {
     global $post;
     
