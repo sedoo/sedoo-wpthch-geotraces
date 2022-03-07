@@ -89,7 +89,11 @@ foreach ( $sscUsers as $user ) {
         </header>
         
         <div>
-            <p><?php echo esc_html( $user->user_email );?></p>
+            <p><?php 
+            $mail=explode("@", $user->user_email);
+            echo $mail[0]."<i style=\"display:none;\">WE DON'T LIKE SPAM</i>@<i style=\"display:none;\">WE DON'T LIKE SPAM</i>".$mail[1]."";
+            ?>
+            </p>
             <address><?php echo $user_meta_geotraces_user_address;?> - <?php echo $user_meta_geotraces_user_country;?></address>
             <p>Tel:<?php echo $user_meta_geotraces_user_phone;?></p>
         </div>
