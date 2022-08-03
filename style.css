@@ -273,22 +273,6 @@ header[id="masthead"] .wrapper .nav-container {
     margin-bottom:30px;
 }
 
-a.tag-cloud-link,
-span.tag-cloud-link {
-    display: inline-block;
-    margin-bottom: 5px;
-    padding: 3px 10px 5px;
-    color:#333;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-decoration: none;
-    background:#F0F0F0;
-}
-
-span.tag-cloud-link {
-    color: var(--theme-color);
-}
-
 .single-post main article, .single-event main article {
     padding:50px;
 }
