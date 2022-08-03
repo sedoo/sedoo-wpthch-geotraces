@@ -4,7 +4,7 @@ Theme URI:    https://github.com/sedoo/sedoo-wpthch-geotraces
 Description:  Geotraces, Labs by sedoo Child Theme
 Author:       Pierre Vert, Nicolas Gruwe, sedoo
 Template:     sedoo-wpth-labs
-Version:      1.8.0
+Version:      1.8.1
 License: Creative Commons, CC-by-nc-sa
 License URI: https://creativecommons.org/licenses/by-nc-sa/4.0/
 Text Domain: sedoo-wpthch-geotraces
@@ -80,17 +80,16 @@ th, td {
     overflow: hidden;
 }
 
-#content-area a,
-#content-area .posts-navigation a:hover {
+/* #content-area a {
     color:var(--theme-color);
-}
+} */
 
 #content-area .content-list a {
     text-decoration: underline;
 }
 #content-area .content-list a:hover {
-    background:var(--theme-color) !important;
-    color:#FFF;
+    background:var(--theme-color);
+    color:var(--hover-textcolor);
     text-decoration: none;
 }
 
@@ -193,10 +192,10 @@ header[id="masthead"] .wrapper .nav-container {
     flex:1 1 300px;
 }
 
-#content-area.newsflash > .wrapper-layout-newsflash a.tag-cloud-link:hover {
+/* #content-area.newsflash > .wrapper-layout-newsflash a.tag-cloud-link:hover {
     color:#FFF;
     background: var(--theme-color);
-}
+} */
 
 /** ARCHIVE ***/
 .archives header#cover{
@@ -315,7 +314,7 @@ font-family: Arial, Helvetica, sans-serif;
 [class*="tribe-events-category-geotraces"] span.tag-cloud-link,
 span.tag-cloud-link[class*="geotraces"] {
     background: var(--theme-color);
-    color:#FFF;
+    color:var(--hover-textcolor);
 }
 
 ol.tribe-list-widget,
@@ -448,7 +447,7 @@ ol.tribe-list-widget h4 {
     height: 25px;
     line-height: 25px;
     background: var(--theme-color);
-    color:#FFF;
+    color:var(--hover-textcolor);
     font-size:1.4375rem;
     display: flex;
     align-content: center;
@@ -659,16 +658,16 @@ div.sedoo-button-block-group a.sedoo-button-block{
 }
 
 div.sedoo-button-block-group a.sedoo-button-block span{
-	color: #309fb3;
+	color: var(--theme-color);
 	text-align:center;
 }
 
 div.sedoo-button-block-group a.sedoo-button-block:hover{
-	background: #309fb3;
+	background: var(--theme-color);
 }
 
 div.sedoo-button-block-group a.sedoo-button-block:hover span{
-	color: #FFF;
+	color: var(--hover-textcolor);
 }
 
 div.sedoo-button-block-group a.sedoo-button-block > svg{
@@ -677,7 +676,7 @@ div.sedoo-button-block-group a.sedoo-button-block > svg{
 	margin-bottom: 10px!important;
 }
 
- div.sedoo-button-block-group a.sedoo-button-block > svg * { stroke: #309fb3; } 
+ div.sedoo-button-block-group a.sedoo-button-block > svg * { stroke: var(--theme-color); } 
 
 
 
